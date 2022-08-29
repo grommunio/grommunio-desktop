@@ -1,0 +1,8 @@
+.TeamListItem:hover {
+  background: #eee;
+}
+
+.TeamListItem-left {
+  display: inline-block;
+  width: calc(100% - 100px);
+}

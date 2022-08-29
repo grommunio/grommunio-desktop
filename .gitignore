@@ -1,6 +1,17 @@
-# dev
-node_modules/
-config.json
+Thumbs.db
+.DS_Store
+*.log
 
-# dist
-out/
+node_modules/
+*_bundle.js
+release/
+npm-debug.log*
+
+dist/
+
+test-results.xml
+test_config.json
+.idea
+testUserData
+
+.gitattributes
