@@ -14,9 +14,10 @@ const path = require('path');
 
 const VERSION = childProcess.execSync('git rev-parse --short HEAD').toString();
 const isProduction = process.env.NODE_ENV === 'production';
+const isRelease = process.env.CIRCLE_BRANCH && process.env.CIRCLE_BRANCH.startsWith('release-');
 
 const codeDefinitions = {
-    __HASH_VERSION__: JSON.stringify(VERSION),
+    __HASH_VERSION__: !isRelease && JSON.stringify(VERSION),
 };
 codeDefinitions['process.env.NODE_ENV'] = JSON.stringify(process.env.NODE_ENV);
 
@@ -36,6 +37,7 @@ module.exports = {
             common: path.resolve(__dirname, './src/common'),
             static: path.resolve(__dirname, './src/assets'),
         },
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     },
 };
 

@@ -23,7 +23,7 @@
   ],
   "protocols": [
     {
-      "name": "grommunio",
+      "name": "Mattermost",
       "schemes": [
         "mattermost",
         "http",
@@ -37,7 +37,7 @@
   "afterPack": "scripts/afterpack.js",
   "afterSign": "scripts/notarize.js",
   "deb": {
-    "synopsis": "grommunio Desktop App",
+    "synopsis": "Mattermost Desktop App",
     "depends": ["gconf2", "gconf-service", "libnotify4", "libxtst6", "libnss3"],
     "category": "contrib/net",
     "priority": "optional"
@@ -58,7 +58,7 @@
         ]
       },
       {
-        "from": "resources/linux",
+        "from": "src/assets/linux",
         "filter": [
           "create_desktop_file.sh",
           "app_icon.png",
@@ -84,8 +84,8 @@
     ],
     "hardenedRuntime": true,
     "gatekeeperAssess": true,
-    "entitlements": "./build/entitlements.mac.plist",
-    "entitlementsInherit": "./build/entitlements.mac.plist",
+    "entitlements": "./entitlements.mac.plist",
+    "entitlementsInherit": "./entitlements.mac.plist",
     "extendInfo": {
       "NSMicrophoneUsageDescription": "Microphone access may be used by Mattermost plugins, such as Jitsi video conferencing.",
       "NSCameraUsageDescription": "Camera access may be used by Mattermost plugins, such as Jitsi video conferencing.",
@@ -96,18 +96,21 @@
     "background": "src/assets/osx/DMG_BG.png",
     "contents": [
       {
-        "x": 152,
-        "y": 201
+        "x": 135,
+        "y": 165
       },
       {
-        "x": 445,
-        "y": 201,
+        "x": 407,
+        "y": 165,
         "type": "link",
         "path": "/Applications"
       }
     ],
-    "iconSize": 110,
-    "iconTextSize": 13
+    "iconSize": 120,
+    "iconTextSize": 14,
+    "window": {
+        "height": 380
+    }
   },
   "squirrelWindows": {
     "iconUrl": "file://src/assets/icon.ico",
