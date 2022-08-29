@@ -46,7 +46,6 @@ import closeButton from '../../assets/titlebar/chrome-close.svg';
 
 import {playSound} from '../notificationSounds';
 
-import TabBar from './TabBar';
 import ExtraBar from './ExtraBar';
 import ErrorView from './ErrorView';
 import TeamDropdownButton from './TeamDropdownButton';
@@ -316,24 +315,6 @@ export default class MainPage extends React.PureComponent<Props, State> {
     render() {
         const currentTabs = this.props.teams.find((team) => team.name === this.state.activeServerName)?.tabs || [];
 
-        const tabsRow = (
-            <TabBar
-                id='tabBar'
-                isDarkMode={this.state.darkMode}
-                tabs={currentTabs}
-                sessionsExpired={this.state.sessionsExpired}
-                unreadCounts={this.state.unreadCounts}
-                mentionCounts={this.state.mentionCounts}
-                activeServerName={this.state.activeServerName}
-                activeTabName={this.state.activeTabName}
-                onSelect={this.handleSelectTab}
-                onCloseTab={this.handleCloseTab}
-                onDrop={this.handleDragAndDrop}
-                tabsDisabled={this.state.modalOpen}
-                isMenuOpen={this.state.isMenuOpen}
-            />
-        );
-
         let topBarClassName = 'topBar';
         if (window.process.platform === 'darwin') {
             topBarClassName += ' macOS';
@@ -396,10 +377,6 @@ export default class MainPage extends React.PureComponent<Props, State> {
 
         const serverMatch = `${this.state.activeServerName}___TAB_[A-Z]+`;
         const totalMentionCount = Object.keys(this.state.mentionCounts).reduce((sum, key) => {
-            // Strip out current server from unread and mention counts
-            if (this.state.activeServerName && key.match(serverMatch)) {
-                return sum;
-            }
             return sum + this.state.mentionCounts[key];
         }, 0);
         const totalUnreadCount = Object.keys(this.state.unreadCounts).reduce((sum, key) => {
@@ -434,7 +411,6 @@ export default class MainPage extends React.PureComponent<Props, State> {
                         isMenuOpen={this.state.isMenuOpen}
                         darkMode={this.state.darkMode}
                     />
-                    {tabsRow}
                     {overlayGradient}
                     {titleBarButtons}
                 </div>
