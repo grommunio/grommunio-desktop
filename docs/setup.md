@@ -11,14 +11,14 @@ To set up the Mattermost desktop application for Windows 7, 8 and 10:
 
 2. From the `\Downloads` directory right-click on the file and select "Extract All..."
 
-   - Change the extract folder from `C:\Users\(currentuser)\Downloads\mattermost-desktop-1.1.1-win64` to `C:\Users\(currentuser)\AppData\Local` where `(currentuser)` will be the name of your user account.
+   - Change the extract folder from `C:\Users\(currentuser)\Downloads\grommunio-desktop-1.1.1-win64` to `C:\Users\(currentuser)\AppData\Local` where `(currentuser)` will be the name of your user account.
    - Check the "Show extracted files when complete" checkbox.
    - Click the "Extract" button.
-   - Look for the new application directory at `C:\Users\(currentuser)\AppData\Local\mattermost-desktop...`.
-   - Remove the version number by renaming the `mattermost-desktop...` application directory to `mattermost-desktop`.
-   - If a `mattermost-desktop` directory already exists then you are upgrading Mattermost, and need to quit Mattermost if it is running and then delete the `mattermost-desktop` directory. After that you can rename the `mattermost-desktop...` directory to `mattermost-desktop`. Don't worry, no settings will be lost, they are stored elsewhere.
+   - Look for the new application directory at `C:\Users\(currentuser)\AppData\Local\grommunio-desktop...`.
+   - Remove the version number by renaming the `grommunio-desktop...` application directory to `grommunio-desktop`.
+   - If a `grommunio-desktop` directory already exists then you are upgrading Mattermost, and need to quit Mattermost if it is running and then delete the `grommunio-desktop` directory. After that you can rename the `grommunio-desktop...` directory to `grommunio-desktop`. Don't worry, no settings will be lost, they are stored elsewhere.
 
-3. Go to the `\mattermost-desktop` application directory and find the file named `Mattermost`.
+3. Go to the `\grommunio-desktop` application directory and find the file named `Mattermost`.
 
    - Right-click the file and select "Pin to Taskbar" to make the application available from your Windows task bar.
    - Right-click the file and select "Pin to Start Menu" to make the application available from your Windows Start menu.
@@ -36,7 +36,7 @@ For OS X 10.11 El Capitan. An older version of OS X has similar way.
 
    A new directory should be created on your Mac.
 
-3. Go to `/mattermost-desktop...` directory and right-click on `Mattermost` package and select "Open"
+3. Go to `/grommunio-desktop...` directory and right-click on `Mattermost` package and select "Open"
 
    If you see a dialog to confirm the application, select "Open".
 
@@ -54,7 +54,7 @@ For Ubuntu 16.04.
 
 2. Open a terminal and execute a command
 
-   `sudo dpkg -i mattermost-desktop-<VERSION>-<ARCH>.deb`
+   `sudo dpkg -i grommunio-desktop-<VERSION>-<ARCH>.deb`
 
 3. Open Dash (located at top left corner) and input `mattermost`, then click `Mattermost` icon
 

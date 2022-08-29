@@ -145,7 +145,7 @@ function initialize(appState, mainWindow, notifyOnly = false) {
                 type: 'info',
                 buttons: ['Close'],
                 title: 'Your Desktop App is up to date',
-                message: 'You have the latest version of the Mattermost Desktop App.',
+                message: 'You have the latest version of the grommunio-desktop App.',
             });
         }
         setTimeout(() => {

@@ -453,7 +453,7 @@ export default class MainPage extends React.PureComponent<Props, State> {
                 return null;
             }
             switch (tabStatus.status) {
-            case Status.NOSERVERS: // TODO: substitute with https://mattermost.atlassian.net/browse/MM-25003
+            case Status.NOSERVERS:
                 component = (
                     <ErrorView
                         id={'NoServers'}

@@ -10,25 +10,25 @@ orbs:
 
 executors:
   wine-chrome:
-    working_directory: ~/mattermost-desktop
+    working_directory: ~/grommunio-desktop
     docker:
       - image: electronuserland/builder:wine-chrome
         environment:
           TAR_OPTIONS: --no-same-owner
   wine-mono:
-    working_directory: ~/mattermost-desktop
+    working_directory: ~/grommunio-desktop
     docker:
       - image: electronuserland/builder:wine-mono
   mac:
-    working_directory: ~/mattermost-desktop
+    working_directory: ~/grommunio-desktop
     macos:
       xcode: "10.3.0"
   aws:
-    working_directory: ~/mattermost-desktop
+    working_directory: ~/grommunio-desktop
     docker:
       - image: 'circleci/python:2.7'
   github:
-    working_directory: ~/mattermost-desktop
+    working_directory: ~/grommunio-desktop
     docker:
       - image: circleci/golang:1.12
 commands:
@@ -439,7 +439,7 @@ jobs:
             rename 's/\d+\.\d+\.\d+/daily/' ./build/win/*
       - aws-s3/copy:
           from: ./build/
-          to: s3://mattermost-desktop-daily-builds/
+          to: s3://grommunio-desktop-daily-builds/
           arguments: --acl public-read --cache-control "no-cache" --recursive
 
   upload_to_github:
@@ -637,7 +637,7 @@ workflows:
             - build-win-no-installer
             - mac_installer
       - upload_to_s3_daily:
-          context: mattermost-desktop-daily-s3
+          context: grommunio-desktop-daily-s3
           requires:
             - build-linux
             - build-win-no-installer

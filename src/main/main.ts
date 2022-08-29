@@ -430,7 +430,7 @@ function handleAppCertificateError(event: electron.Event, webContents: electron.
         }
         dialog.showMessageBox(mainWindow, {
             title: 'Certificate Error',
-            message: 'There is a configuration issue with this Mattermost server, or someone is trying to intercept your connection. You also may need to sign into the Wi-Fi you are connected to using your web browser.',
+            message: 'There is a configuration issue with this grommunio server, or someone is trying to intercept your connection. You also may need to sign into the Wi-Fi you are connected to using your web browser.',
             type: 'error',
             detail,
             buttons: ['More Details', 'Cancel Connection'],
@@ -652,7 +652,7 @@ function updateSpellCheckerLocales() {
 
 function initializeAfterAppReady() {
     updateServerInfos(config.teams);
-    app.setAppUserModelId('Mattermost.Desktop'); // Use explicit AppUserModelID
+    app.setAppUserModelId('grommunio.Desktop'); // Use explicit AppUserModelID
     const defaultSession = session.defaultSession;
 
     if (process.platform !== 'darwin') {

@@ -225,7 +225,7 @@ export default class NewTeamModal extends React.PureComponent<Props, State> {
                                 isInvalid={Boolean(this.getTeamUrlValidationState())}
                             />
                             <FormControl.Feedback/>
-                            <FormText className='NewTeamModal-noBottomSpace'>{'The URL of your Mattermost server. Must start with http:// or https://.'}</FormText>
+                            <FormText className='NewTeamModal-noBottomSpace'>{'The URL of your grommunio mail server. Must start with http:// or https://.'}</FormText>
                         </FormGroup>
                     </form>
                 </Modal.Body>

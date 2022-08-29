@@ -685,7 +685,7 @@ export default class SettingsPage extends React.PureComponent<Record<string, nev
                 />
                 {'Use GPU hardware acceleration'}
                 <FormText>
-                    {'If enabled, Mattermost UI is rendered more efficiently but can lead to decreased stability for some systems.'}
+                    {'If enabled, grommunio UI is rendered more efficiently but can lead to decreased stability for some systems.'}
                     {' Setting takes effect after restarting the app.'}
                 </FormText>
             </FormCheck>,

@@ -207,8 +207,6 @@ export function sendToAll(channel: string, ...args: any[]) {
     if (status.settingsWindow) {
         status.settingsWindow.webContents.send(channel, ...args);
     }
-
-    // TODO: should we include popups?
 }
 
 export function sendToMattermostViews(channel: string, ...args: any[]) {

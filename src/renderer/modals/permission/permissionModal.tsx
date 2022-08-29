@@ -75,7 +75,7 @@ export default class PermissionModal extends React.PureComponent<Props, State> {
         return (
             <div>
                 <p>
-                    {`A site that's not included in your Mattermost server configuration requires access for ${PERMISSION_DESCRIPTION[permission!]}.`}
+                    {`A site that's not included in your grommunio server configuration requires access for ${PERMISSION_DESCRIPTION[permission!]}.`}
                 </p>
                 <p>
                     <span>{'This request originated from '}</span>
