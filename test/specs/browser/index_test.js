@@ -125,7 +125,7 @@ describe('renderer/index.html', function desc() {
     //     await this.app.restart();
     //     await this.app.client.pause(2000);
     //     const windowTitle = await this.app.browserWindow.getTitle();
-    //     windowTitle.should.equal('Mattermost Desktop App');
+    //     windowTitle.should.equal('grommunio Desktop App');
     // });
 
     // Skip because it's very unstable in CI
