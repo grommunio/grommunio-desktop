@@ -214,7 +214,6 @@ export function validateV2ConfigData(data: ConfigV2) {
         data.teams = teams;
     }
     if (data.spellCheckerURL && !urlUtils.isValidURL(data.spellCheckerURL)) {
-        log.error('Invalid download location for spellchecker dictionary, removing from config');
         delete data.spellCheckerURL;
     }
     return validateAgainstSchema(data, configDataSchemaV2);
@@ -245,7 +244,6 @@ export function validateV3ConfigData(data: ConfigV3) {
         data.teams = teams;
     }
     if (data.spellCheckerURL && !urlUtils.isValidURL(data.spellCheckerURL)) {
-        log.error('Invalid download location for spellchecker dictionary, removing from config');
         delete data.spellCheckerURL;
     }
     return validateAgainstSchema(data, configDataSchemaV3);

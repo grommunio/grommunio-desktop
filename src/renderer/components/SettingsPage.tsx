@@ -421,83 +421,6 @@ export default class SettingsPage extends React.PureComponent<Record<string, nev
                 </FormCheck>);
         }
 
-        options.push(
-            <>
-                <FormCheck>
-                    <FormCheck.Input
-                        type='checkbox'
-                        key='inputSpellChecker'
-                        id='inputSpellChecker'
-                        ref={this.useSpellCheckerRef}
-                        checked={this.state.useSpellChecker}
-                        onChange={this.handleChangeUseSpellChecker}
-                    />
-                    {'Check spelling'}
-                    <FormText>
-                        {'Highlight misspelled words in your messages based on your system language or language preference. '}
-                        {'Setting takes effect after restarting the app.'}
-                    </FormText>
-                </FormCheck>
-                {this.state.useSpellChecker &&
-                    <ReactSelect
-                        className='SettingsPage__spellCheckerLocalesDropdown'
-                        classNamePrefix='SettingsPage__spellCheckerLocalesDropdown'
-                        options={this.state.availableLanguages}
-                        isMulti={true}
-                        isClearable={false}
-                        onChange={this.handleChangeSpellCheckerLocales}
-                        value={this.selectedSpellCheckerLocales}
-                        placeholder={'Select preferred language(s)'}
-                    />
-                }
-            </>,
-        );
-        if (process.platform !== 'darwin') {
-            if (this.state.spellCheckerURL === null || typeof this.state.spellCheckerURL === 'undefined') {
-                options.push(
-                    <Button
-                        id='editSpellcheckerURL'
-                        key='editSpellcheckerURL'
-                        onClick={() => this.setState({spellCheckerURL: '', allowSaveSpellCheckerURL: false})}
-                        variant='link'
-                    >{'Use an alternative dictionary URL'}</Button>,
-                );
-            } else {
-                options.push(
-                    <div
-                        style={settingsPage.container}
-                        key='containerInputSpellchekerURL'
-                    >
-                        <input
-                            disabled={!this.state.useSpellChecker}
-                            style={settingsPage.downloadLocationInput}
-                            key='inputSpellCheckerURL'
-                            id='inputSpellCheckerURL'
-                            ref={this.spellCheckerURLRef}
-                            onChange={this.handleChangeSpellCheckerURL}
-                            value={this.state.spellCheckerURL}
-                        />
-                        <Button
-                            disabled={!this.state.allowSaveSpellCheckerURL}
-                            key='saveSpellCheckerURL'
-                            style={settingsPage.downloadLocationButton}
-                            id='saveSpellCheckerURL'
-                            onClick={this.saveSpellCheckerURL}
-                        >
-                            <span>{'Save'}</span>
-                        </Button>
-                        <FormText>
-                            {'Specify the url where dictionary definitions can be retrieved'}
-                        </FormText>
-                        <Button
-                            id='revertSpellcheckerURL'
-                            key='revertSpellcheckerURL'
-                            onClick={this.resetSpellCheckerURL}
-                            variant='link'
-                        >{'Revert to default'}</Button>
-                    </div>);
-            }
-        }
         if (window.process.platform === 'darwin' || window.process.platform === 'win32') {
             const TASKBAR = window.process.platform === 'win32' ? 'taskbar' : 'Dock';
             options.push(
@@ -689,35 +612,6 @@ export default class SettingsPage extends React.PureComponent<Record<string, nev
                     {' Setting takes effect after restarting the app.'}
                 </FormText>
             </FormCheck>,
-        );
-
-        options.push(
-            <div
-                style={settingsPage.container}
-                key='containerDownloadLocation'
-            >
-                <hr/>
-                <div>{'Download Location'}</div>
-                <input
-                    disabled={true}
-                    style={settingsPage.downloadLocationInput}
-                    key='inputDownloadLocation'
-                    id='inputDownloadLocation'
-                    ref={this.downloadLocationRef}
-                    onChange={this.handleChangeDownloadLocation}
-                    value={this.state.downloadLocation}
-                />
-                <Button
-                    style={settingsPage.downloadLocationButton}
-                    id='saveDownloadLocation'
-                    onClick={this.selectDownloadLocation}
-                >
-                    <span>{'Change'}</span>
-                </Button>
-                <FormText>
-                    {'Specify the folder where files will download.'}
-                </FormText>
-            </div>,
         );
 
         let optionsRow = null;
