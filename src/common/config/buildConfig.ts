@@ -26,9 +26,9 @@ const buildConfig: BuildConfig = {
       url: 'https://example.com'
     }
   */],
-    helpLink: 'https://about.mattermost.com/default-desktop-app-documentation/',
+    helpLink: 'https://docs.grommunio.com/web/login.html',
     enableServerManagement: true,
-    enableAutoUpdater: true,
+    enableAutoUpdater: false,
     managedResources: ['trusted'],
 };
 
