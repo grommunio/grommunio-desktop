@@ -47,7 +47,7 @@ Configuration will be saved into Electron's userData directory:
 
 A custom data directory location can be specified with:
 
-* `Mattermost.exe --args --data-dir C:\my-mattermost-data` on Windows
+* `grommunio.exe --args --data-dir C:\my-mattermost-data` on Windows
 * `open /Applications/Mattermost.app/ --args --data-dir ~/my-mattermost-data/` on macOS 
 * `./grommunio-desktop --args --data-dir ~/my-mattermost-data/` on Linux
 
@@ -60,7 +60,7 @@ Normally, the application will follow your system settings to use a proxy, or yo
 * `--proxy-server=<SERVER>:<PORT>`
 * `--proxy-pac-url=<URL>`
 
-On Windows, please make sure to add `--` before options. For example, `Mattermost.exe -- --proxy-server=...`.
+On Windows, please make sure to add `--` before options. For example, `grommunio.exe -- --proxy-server=...`.
 
 ## Custom App Deployments
 Our [docs provide a guide](https://docs.mattermost.com/deployment/desktop-app-deployment.html) on how to customize and distribute your own Mattermost Desktop App, including how to distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings.
