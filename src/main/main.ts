@@ -457,7 +457,7 @@ function handleAppCertificateError(event: electron.Event, webContents: electron.
                     certificateStore.save();
                     certificateErrorCallbacks.get(errorID)(true);
                     certificateErrorCallbacks.delete(errorID);
-                    webContents.loadURL(url);
+                    webContents.loadURL(url, {userAgent: 'grommunio-desktop'});
                 } else {
                     if (checkboxChecked) {
                         certificateStore.add(origin, certificate, true);

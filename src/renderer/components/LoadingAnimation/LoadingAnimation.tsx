@@ -36,35 +36,18 @@ function LoadingAnimation({
 ) {
     const loadingIconContainerRef = React.useRef(null);
     const [animationState, setAnimationState] = React.useState(LOADING_STATE.INITIALIZING);
-    const [loadingAnimationComplete, setLoadingAnimationComplete] = React.useState(false);
 
     React.useEffect(() => {
         if (loading) {
             setAnimationState(LOADING_STATE.LOADING);
-            setLoadingAnimationComplete(false);
         }
 
         // in order for the logo animation to fully complete before fading out, the LOADED state is not set until
         // both the external loaded prop changes back to false and the internal loading animation is complete
-        if (!loading && loadingAnimationComplete) {
+        if (!loading) {
             setAnimationState(LOADING_STATE.LOADED);
         }
     }, [loading]);
-
-    React.useEffect(() => {
-    // in order for the logo animation to fully complete before fading out, the LOADED state is not set until
-    // both the external loaded prop goes back to false and the internal loading animation is complete
-        if (!loading && loadingAnimationComplete) {
-            setAnimationState(LOADING_STATE.LOADED);
-        }
-    }, [loadingAnimationComplete]);
-
-    // listen for end of the css logo animation sequence
-    useAnimationEnd<HTMLDivElement>(loadingIconContainerRef, () => {
-        setTimeout(() => {
-            setLoadingAnimationComplete(true);
-        }, ANIMATION_COMPLETION_DELAY);
-    }, 'LoadingAnimation__compass-shrink');
 
     // listen for end of final css logo fade/shrink animation sequence
     useAnimationEnd<HTMLDivElement>(loadingIconContainerRef, () => {
@@ -83,9 +66,7 @@ function LoadingAnimation({
                 'LoadingAnimation--loading': animationState === LOADING_STATE.LOADING && animationState !== LOADING_STATE.COMPLETE,
                 'LoadingAnimation--loaded': animationState === LOADING_STATE.LOADED && animationState !== LOADING_STATE.COMPLETE,
             })}
-        >
-            <LoadingIcon/>
-        </div>
+        />
     );
 }
 
