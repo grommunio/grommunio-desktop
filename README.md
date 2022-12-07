@@ -16,18 +16,13 @@
 - [About](#about)
   - [Compatible with](#compatible-with)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Status](#status)
 - [Support](#support)
 - [Project assistance](#project-assistance)
 - [Contributing](#contributing)
-  - [Additional notesg](#additional-notes)
+  - [Additional notes](#additional-notes)
 - [Security](#security)
-- [Development](#development)
-  - [Coding style](#coding-style)
-  - [Setup development environment](#setup-development-environment)
-- [Translators](#translators)
 - [License](#license)
 
 </details>
@@ -110,12 +105,6 @@ or
 
 grommunio Desktop follows good practices of security. grommunio constantly monitors security-related issues.
 grommunio Desktop is provided **"as is"** without any **warranty**. For professional support options through subscriptions, head over to [grommunio](https://grommunio.com).
-
-## Development
-
-### Coding style
-
-This repository follows a customized coding style. The coding style can be validated anytime by the repositories provided [configuration file](.phpcs).
 
 ## License
 
