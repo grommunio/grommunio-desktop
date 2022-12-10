@@ -2,7 +2,6 @@
 
 ![project license](https://img.shields.io/badge/license-AGPL--3.0-orange)
 [![latest version](https://shields.io/github/v/tag/grommunio/grommunio-desktop)](https://github.com/grommunio/grommunio-desktop/tags)
-[![scrutinizer](https://img.shields.io/scrutinizer/build/g/grommunio/grommunio-desktop)](https://scrutinizer-ci.com/g/grommunio/grommunio-desktop/)
 [![code size](https://img.shields.io/github/languages/code-size/grommunio/grommunio-desktop)](https://github.com/grommunio/grommunio-desktop)
 [![pull requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](https://github.com/grommunio/grommunio-desktop/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [![code with love by grommunio](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-grommunio-ff1414.svg)](https://grommunio.com)
