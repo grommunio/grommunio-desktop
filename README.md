@@ -7,7 +7,7 @@
 [![code with love by grommunio](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-grommunio-ff1414.svg)](https://grommunio.com)
 [![twitter](https://img.shields.io/twitter/follow/grommunio?style=social)](https://twitter.com/grommunio)
 
-**grommunio Desktop is the cross-platform client designed to run grommunio Web on your desktop without any specific browser requirements. With grommunio Desktop, users enjoy multi-account functionality with full integration of grommunio Web including its integrations such as grommunio Files, Chat and Meet.**
+grommunio Desktop is the cross-platform client designed to run grommunio Web on your desktop without any specific browser requirements. With grommunio Desktop, users enjoy multi-account functionality with full integration of grommunio Web including its integrations such as grommunio Files, Chat and Meet.
 
 <details open="open">
 <summary>Overview</summary>
@@ -30,12 +30,12 @@
 
 ## About grommunio Desktop
 
-- Provides all **web-based** groupware functions (emails, contacts, calendar, tasks and notes) on your desktop
-- Works with all **extensions** integrating grommunio Meet, Chat Archive and more
-- **Compatible**, running on Microsoft Windows 8.1+, macOS 10.14+ and Linux (native packages to follow) 
-- **Easy to use**, providing a polished interface with nearly no training required for users 
-- **Fast** with a snappy interface which reacts almost immediately to user interactions
-- **Secure**, with certifications through independent security research and validation
+- Provides all web-based groupware functions (emails, contacts, calendar, tasks and notes) on your desktop
+- Works with all extensions integrating grommunio Meet, Chat Archive and more
+- Compatible, running on Microsoft Windows 8.1+, macOS 10.14+ and Linux (native packages to follow)
+- Easy to use, providing a polished interface with nearly no training required for users
+- Fast with a snappy interface which reacts almost immediately to user interactions
+- Secure, with certifications through independent security research and validation
 
 ### Compatible with
 
@@ -61,24 +61,24 @@ Installation images are to surface with official release:
 
 ## Support
 
-- Support is available through **[grommunio GmbH](https://grommunio.com)** and its partners.
-- grommunio Desktop community is available here: **[grommunio Community](https://community.grommunio.com)**
+- Support is available through [grommunio GmbH](https://grommunio.com) and its partners.
+- grommunio Desktop community is available here: [grommunio Community](https://community.grommunio.com)
 
 For direct contact to the maintainers (for example to supply information about a security-related responsible disclosure), you can contact grommunio directly at [dev@grommunio.com](mailto:dev@grommunio.com)
 
 ## Project assistance
 
-If you want to say **thank you** or/and support active development of grommunio Desktop:
+If you want to say thank you or/and support active development of grommunio Desktop:
 
 - Add a [GitHub Star](https://github.com/grommunio/grommunio-desktop) to the project.
 - Tweet about grommunio Desktop.
 - Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/), your personal blog or any medium you feel comfortable with.
 
-Together, we can make grommunio Desktop **better**!
+Together, we can make grommunio Desktop better!
 
 ## Contributing
 
-First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
+First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are greatly appreciated.
 
 If you have found an issue and want to report an issue, either reach out to us in our [community](https://community.grommunio.com), or, if you have a subscription, open up a [support case](https://grommunio.com/).
 
@@ -103,10 +103,10 @@ or
 ## Security
 
 grommunio Desktop follows good practices of security. grommunio constantly monitors security-related issues.
-grommunio Desktop is provided **"as is"** without any **warranty**. For professional support options through subscriptions, head over to [grommunio](https://grommunio.com).
+grommunio Desktop is provided "as is" without any warranty. For professional support options through subscriptions, head over to [grommunio](https://grommunio.com).
 
 ## License
 
-This project is licensed under the **Apache License 2.0**.
+This project is licensed under the Apache License 2.0.
 
 See [LICENSE.txt](LICENSE.txt) for more information.
