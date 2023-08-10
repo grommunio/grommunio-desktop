@@ -204,14 +204,6 @@ export default class SettingsPage extends React.PureComponent<Record<string, nev
         });
     }
 
-    handleChangeMinimizeToTray = () => {
-        const shouldMinimizeToTray = this.state.showTrayIcon && this.minimizeToTrayRef.current?.checked;
-
-        window.timers.setImmediate(this.saveSetting, CONFIG_TYPE_APP_OPTIONS, {key: 'minimizeToTray', data: shouldMinimizeToTray});
-        this.setState({
-            minimizeToTray: shouldMinimizeToTray,
-        });
-    }
 
     handleFlashWindow = () => {
         window.timers.setImmediate(this.saveSetting, CONFIG_TYPE_APP_OPTIONS, {
@@ -572,27 +564,6 @@ export default class SettingsPage extends React.PureComponent<Record<string, nev
                     />
                 </FormGroup>,
             );
-        }
-
-        if (window.process.platform === 'linux' || window.process.platform === 'win32') {
-            options.push(
-                <FormCheck
-                    key='inputMinimizeToTray'
-                >
-                    <FormCheck.Input
-                        type='checkbox'
-                        id='inputMinimizeToTray'
-                        ref={this.minimizeToTrayRef}
-                        disabled={!this.state.showTrayIcon}
-                        checked={this.state.minimizeToTray}
-                        onChange={this.handleChangeMinimizeToTray}
-                    />
-                    {'Leave app running in notification area when application window is closed'}
-                    <FormText>
-                        {'If enabled, the app stays running in the notification area after app window is closed.'}
-                        {this.state.showTrayIcon ? ' Setting takes effect after restarting the app.' : ''}
-                    </FormText>
-                </FormCheck>);
         }
 
         options.push(
