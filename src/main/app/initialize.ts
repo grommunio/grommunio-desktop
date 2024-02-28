@@ -286,7 +286,7 @@ async function initializeAfterAppReady() {
         }
     });
 
-    app.setAppUserModelId('Mattermost.Desktop'); // Use explicit AppUserModelID
+    app.setAppUserModelId('grommunio.Desktop'); // Use explicit AppUserModelID
     const defaultSession = session.defaultSession;
 
     if (process.platform !== 'darwin') {

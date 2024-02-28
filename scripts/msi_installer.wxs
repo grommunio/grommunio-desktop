@@ -56,7 +56,7 @@
     <MajorUpgrade AllowDowngrades="yes" />
     <!-- Retrieve previous installation path -->
     <Property Id="INSTALLDIR">
-      <RegistrySearch Id="DetermineInstallLocation" Type="raw" Root="HKLM" Key="Software\Mattermost\Desktop" Name="InstallLocation" Win64="$(var.Win64)" />
+      <RegistrySearch Id="DetermineInstallLocation" Type="raw" Root="HKLM" Key="Software\grommunio.Desktop" Name="InstallLocation" Win64="$(var.Win64)" />
     </Property>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="$(var.ProgramFilesVersion)" Name="PFiles">
@@ -91,7 +91,7 @@
         <Directory Id="ProgramMenuDir" Name="grommunio-desktop">
           <Component Id="ProgramMenuDir" Guid="CA5C6FAF-C004-4909-AF1C-AA0A5F53C245">
             <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
-            <RegistryValue Root="HKCU" Key="Software\Mattermost\Desktop" Type="string" Value="" KeyPath="yes" />
+            <RegistryValue Root="HKCU" Key="Software\grommunio.Desktop" Type="string" Value="" KeyPath="yes" />
           </Component>
         </Directory>
       </Directory>
@@ -105,7 +105,7 @@
     src.: https://web.archive.org/web/20181104151047/https://helgeklein.com/blog/2014/09/real-world-example-wix-msi-application-installer/
     -->
       <Component Id="RegInstallLocation" Guid="BF67264A-28BB-44FF-A646-F118D814651E">
-        <RegistryKey Root="HKLM" Key="Software\Mattermost\Desktop">
+        <RegistryKey Root="HKLM" Key="Software\grommunio.Desktop">
           <RegistryValue Name="InstallLocation" Value="[INSTALLDIR]" Type="string" KeyPath="yes" />
         </RegistryKey>
       </Component>
@@ -137,7 +137,7 @@
     <Property Id="ARPURLINFOABOUT">https://mattermost.com/</Property>
     <!--
       Next line will be added by `Makefile.ps1`, leaving it here for reference, as it will be added before constructing the MSI
-      <Property Id="ComponentDownload">https://releases.mattermost.com/desktop/0.0.0/mattermost-desktop-0.0.0-$(var.Platform).msi</Property> 
+      <Property Id="ComponentDownload">https://releases.mattermost.com/desktop/0.0.0/grommunio-desktop-0.0.0-$(var.Platform).msi</Property> 
     -->
     <Property Id="ADDDESKTOPSHORTCUT">true</Property>
     <Property Id="ADDSTARTMENUSHORTCUT">true</Property>
