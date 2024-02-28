@@ -1,4 +1,4 @@
-# Mattermost Desktop for Linux
+# grommunio Desktop for Linux
 
 ## Table of Contents
 
@@ -56,7 +56,7 @@ After launching, you need to configure the application to interact with your ser
 4. Click **Add**.
 5. Click **Save**.
 
-More guides are available at [Mattermost Documentation](https://docs.mattermost.com/messaging/managing-desktop-app-servers.html).
+More guides are available at [grommunio-desktop Documentation](https://docs.mattermost.com/messaging/managing-desktop-app-servers.html).
 
 
 ## Contributing

@@ -21,7 +21,7 @@
  *      - ZEPHYR_API_KEY=[api_key]
  *      - JIRA_PROJECT_KEY=[project_key], e.g. "MM",
  *      - ZEPHYR_FOLDER_ID=[folder_id], e.g. 847997
- *   For sending hooks to Mattermost channels
+ *   For sending hooks to grommunio-desktop channels
  *      - FULL_REPORT, WEBHOOK_URL and DIAGNOSTIC_WEBHOOK_URL
  *   Test type
  *      - TYPE=[type], e.g. "MASTER", "PR", "RELEASE", "CLOUD"

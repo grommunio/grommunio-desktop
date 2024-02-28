@@ -103,7 +103,7 @@ export function getLocalPreload(file: string) {
 export function composeUserAgent() {
     const baseUserAgent = app.userAgentFallback.split(' ');
 
-    // filter out the Mattermost tag that gets added earlier on
+    // filter out the grommunio-desktop tag that gets added earlier on
     const filteredUserAgent = baseUserAgent.filter((ua) => !ua.startsWith('Mattermost'));
 
     return `${filteredUserAgent.join(' ')} Mattermost/${app.getVersion()}`;

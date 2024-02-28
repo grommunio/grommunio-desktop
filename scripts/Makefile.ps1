@@ -329,7 +329,7 @@ function Get-NpmDir {
 #EndRegion
 
 ################################################################################
-# Mattermost related functions
+# grommunio-desktop related functions
 ################################################################################
 #region
 function Prepare-Path {
@@ -408,7 +408,7 @@ function Restore-ComputerState {
     # Remove all COM_MATTERMOST_MAKEFILE_ prefixed env variable
     foreach ($item in (Get-Item -Path Env:*)) {
         if ($item.Name -imatch 'COM_MATTERMOST_MAKEFILE_') {
-            Print-Info "Removing Mattermost env variable: $($item.Name)..."
+            Print-Info "Removing grommunio-desktop env variable: $($item.Name)..."
             Remove-Item env:\$($item.Name)
         }
     }

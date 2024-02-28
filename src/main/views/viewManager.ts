@@ -284,7 +284,7 @@ export class ViewManager {
     }
 
     /**
-     * Mattermost view event handlers
+     * grommunio-desktop view event handlers
      */
 
     private activateView = (viewId: string) => {

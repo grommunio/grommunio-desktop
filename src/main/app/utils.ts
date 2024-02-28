@@ -204,7 +204,7 @@ export function migrateMacAppStore() {
             return;
         }
     } catch (e) {
-        log.error('MAS: Failed to check for existing Mattermost Desktop install, skipping', e);
+        log.error('MAS: Failed to check for existing grommunio Desktop install, skipping', e);
         return;
     }
 

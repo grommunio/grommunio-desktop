@@ -31,7 +31,7 @@
   ],
   "protocols": [
     {
-      "name": "Mattermost",
+      "name": "grommunio-desktop",
       "schemes": [
         "mattermost"
       ]
@@ -42,7 +42,7 @@
   "afterAllArtifactBuild": "scripts/afterbuild.js",
   "deb": {
     "artifactName": "${version}/${name}_${version}-1_${arch}.${ext}",
-    "synopsis": "Mattermost Desktop App",
+    "synopsis": "grommunio Desktop App",
     "depends": [
       "libnotify4",
       "libxtst6",
@@ -102,8 +102,8 @@
     "entitlements": "./entitlements.mac.plist",
     "entitlementsInherit": "./entitlements.mac.plist",
     "extendInfo": {
-      "NSMicrophoneUsageDescription": "Microphone access may be used by Mattermost plugins, such as Jitsi video conferencing.",
-      "NSCameraUsageDescription": "Camera access may be used by Mattermost plugins, such as Jitsi video conferencing.",
+      "NSMicrophoneUsageDescription": "Microphone access may be used by grommunio-desktop plugins, such as Jitsi video conferencing.",
+      "NSCameraUsageDescription": "Camera access may be used by grommunio-desktop plugins, such as Jitsi video conferencing.",
       "LSFileQuarantineEnabled": true
   }
   },

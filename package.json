@@ -1,8 +1,8 @@
 {
-  "name": "mattermost-desktop",
-  "productName": "Mattermost",
+  "name": "grommunio-desktop",
+  "productName": "grommunio-desktop",
   "version": "5.6.0",
-  "description": "Mattermost",
+  "description": "grommunio-desktop",
   "main": "dist/index.js",
   "author": "Mattermost, Inc. <feedback@mattermost.com>",
   "license": "Apache-2.0",

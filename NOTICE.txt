@@ -1,11 +1,11 @@
-Mattermost Desktop
+grommunio Desktop
 
 © 2016-2017 Mattermost, Inc.  All Rights Reserved.  See LICENSE.txt for license information.
 
 NOTICES:
 --------
 
-This document includes a list of open source components used in Mattermost Desktop, including those that have been modified.
+This document includes a list of open source components used in grommunio Desktop, including those that have been modified.
 
 --------
 
@@ -351,7 +351,7 @@ SOFTWARE.
 
 This product contains '@mattermost/compass-icons' by Mattermost.
 
-The compass components package is the implementation of the compass design system meant (but not limited) to be used in the mattermost products: Messaging, Playbooks and Focalboard.
+The compass components package is the implementation of the compass design system meant (but not limited) to be used in the grommunio-desktop products: Messaging, Playbooks and Focalboard.
 
 * HOMEPAGE:
   * https://github.com/mattermost/compass-components
@@ -1766,7 +1766,7 @@ SOFTWARE.
 
 This product contains 'eslint-plugin-mattermost' by Mattermost.
 
-An ESLint plugin containing the configuration used by Mattermost as well as support for custom rules specific to the Mattermost code base.
+An ESLint plugin containing the configuration used by grommunio-desktop as well as support for custom rules specific to the grommunio-desktop code base.
 
 * HOMEPAGE:
   * https://github.com/mattermost/eslint-plugin-mattermost
@@ -2458,7 +2458,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 This product contains 'mmjstool' by Mattermost.
 
-Set of utilities to help in mattermost development.
+Set of utilities to help in grommunio-desktop development.
 
 * HOMEPAGE:
   * https://github.com/mattermost/mattermost-utilities

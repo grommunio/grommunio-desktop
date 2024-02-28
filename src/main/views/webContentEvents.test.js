@@ -186,7 +186,7 @@ describe('main/views/webContentsEvents', () => {
             expect(shell.openExternal).toBeCalledWith('https://google.com/?^');
         });
 
-        it('should divert to allowProtocolDialog for custom protocols that are not mattermost or http', () => {
+        it('should divert to allowProtocolDialog for custom protocols that are not grommunio-desktop or http', () => {
             expect(newWindow({url: 'spotify:album:2OZbaW9tgO62ndm375lFZr'})).toStrictEqual({action: 'deny'});
             expect(allowProtocolDialog.handleDialogEvent).toBeCalledWith('spotify:', 'spotify:album:2OZbaW9tgO62ndm375lFZr');
         });

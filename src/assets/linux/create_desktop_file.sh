@@ -8,7 +8,7 @@ cd ${WORKING_DIR}
 cat <<EOS > Mattermost.desktop
 [Desktop Entry]
 Name=Mattermost
-Comment=Mattermost Desktop application for Linux
+Comment=grommunio Desktop application for Linux
 Exec="${FULL_PATH}/mattermost-desktop" %U
 Terminal=false
 Type=Application

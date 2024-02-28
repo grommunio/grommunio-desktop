@@ -210,7 +210,7 @@ export class CallsWidgetWindow {
         }
 
         // Only allow events coming from either the widget window or the
-        // original Mattermost view that initiated it.
+        // original grommunio-desktop view that initiated it.
         return event.sender.id === this.win?.webContents.id ||
             event.sender.id === this.mainView?.webContentsId;
     }
