@@ -25,10 +25,10 @@ function fixSetuid(context) {
 function getAppFileName(context) {
     switch (context.electronPlatformName) {
     case 'win32':
-        return 'Mattermost.exe';
+        return 'grommunio-desktop.exe';
     case 'darwin':
     case 'mas':
-        return 'Mattermost.app';
+        return 'grommunio-desktop.app';
     case 'linux':
         return context.packager.executableName;
     default:

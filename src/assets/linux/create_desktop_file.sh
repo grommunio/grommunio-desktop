@@ -7,7 +7,7 @@ FULL_PATH=`pwd`
 cd ${WORKING_DIR}
 cat <<EOS > grommunio.Desktop
 [Desktop Entry]
-Name=Mattermost
+Name=grommunio-desktop
 Comment=grommunio Desktop application for Linux
 Exec="${FULL_PATH}/grommunio-desktop" %U
 Terminal=false

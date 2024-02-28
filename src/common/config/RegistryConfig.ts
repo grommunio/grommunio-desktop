@@ -12,7 +12,7 @@ import {Logger} from 'common/log';
 
 const log = new Logger('RegistryConfig');
 const REGISTRY_HIVE_LIST = [WindowsRegistry.HKLM, WindowsRegistry.HKCU];
-const BASE_REGISTRY_KEY_PATH = '\\Software\\Policies\\Mattermost';
+const BASE_REGISTRY_KEY_PATH = '\\Software\\Policies\\grommunio-desktop';
 export const REGISTRY_READ_EVENT = 'registry-read';
 
 /**

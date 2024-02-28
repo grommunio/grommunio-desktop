@@ -18,7 +18,7 @@ jest.mock('fs', () => ({
 
 jest.mock('electron', () => ({
     app: {
-        name: 'Mattermost',
+        name: 'grommunio-desktop',
     },
     ipcMain: {
         on: jest.fn(),

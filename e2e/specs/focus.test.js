@@ -88,11 +88,11 @@ describe('focus', function desc() {
 
             // Make sure you can just start typing and it'll go in the post textbox
             await asyncSleep(500);
-            robot.typeString('Mattermost');
+            robot.typeString('grommunio-desktop');
             await asyncSleep(500);
 
             const textboxString = await firstServer.inputValue('#post_textbox');
-            textboxString.should.equal('Mattermost');
+            textboxString.should.equal('grommunio-desktop');
         });
 
         it('MM-T1316 should return focus to the message box when closing the settings window', async () => {
@@ -111,11 +111,11 @@ describe('focus', function desc() {
 
             // Make sure you can just start typing and it'll go in the post textbox
             await asyncSleep(500);
-            robot.typeString('Mattermost');
+            robot.typeString('grommunio-desktop');
             await asyncSleep(500);
 
             const textboxString = await firstServer.inputValue('#post_textbox');
-            textboxString.should.equal('Mattermost');
+            textboxString.should.equal('grommunio-desktop');
         });
 
         it('MM-T1317 should return focus to the focused box when switching servers', async () => {
@@ -135,11 +135,11 @@ describe('focus', function desc() {
 
             // Make sure you can just start typing and it'll go in the post textbox
             await asyncSleep(500);
-            robot.typeString('Mattermost');
+            robot.typeString('grommunio-desktop');
             await asyncSleep(500);
 
             const textboxString = await firstServer.inputValue('#post_textbox');
-            textboxString.should.equal('Mattermost');
+            textboxString.should.equal('grommunio-desktop');
 
             await mainView.click('.ServerDropdownButton');
             await dropdownView.click('.ServerDropdown .ServerDropdown__button:has-text("community")');

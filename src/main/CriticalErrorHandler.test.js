@@ -16,7 +16,7 @@ jest.mock('path', () => ({
 
 jest.mock('electron', () => ({
     app: {
-        name: 'Mattermost',
+        name: 'grommunio-desktop',
         getVersion: () => '5.0.0',
         getPath: (folder) => `/${folder}`,
         relaunch: jest.fn(),

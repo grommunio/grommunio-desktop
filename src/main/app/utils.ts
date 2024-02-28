@@ -189,7 +189,7 @@ export function initCookieManager(session: Session) {
 
 export function migrateMacAppStore() {
     const migrationPrefs = new JsonFileManager<MigrationInfo>(migrationInfoPath);
-    const oldPath = path.join(app.getPath('userData'), '../../../../../../../Library/Application Support/Mattermost');
+    const oldPath = path.join(app.getPath('userData'), '../../../../../../../Library/Application Support/grommunio-desktop');
 
     // Check if we've already migrated
     if (migrationPrefs.getValue('masConfigs')) {

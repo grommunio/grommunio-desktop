@@ -88,7 +88,7 @@ jest.mock('electron-is-dev', () => isDev);
 
 jest.mock('../../../electron-builder.json', () => ([
     {
-        name: 'Mattermost',
+        name: 'grommunio-desktop',
         schemes: [
             'mattermost',
         ],

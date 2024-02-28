@@ -338,7 +338,7 @@ describe('app/serverViewState', () => {
             ServerInfo.mockImplementation(({url}) => ({
                 fetchConfigData: jest.fn().mockImplementation(() => ({
                     serverVersion: '7.8.0',
-                    siteName: 'Mattermost',
+                    siteName: 'grommunio-desktop',
                     siteURL: url,
                 })),
             }));
@@ -407,7 +407,7 @@ describe('app/serverViewState', () => {
 
                     return {
                         serverVersion: '7.8.0',
-                        siteName: 'Mattermost',
+                        siteName: 'grommunio-desktop',
                         siteURL: url,
                     };
                 }),
@@ -435,7 +435,7 @@ describe('app/serverViewState', () => {
                 fetchConfigData: jest.fn().mockImplementation(() => {
                     return {
                         serverVersion: '7.8.0',
-                        siteName: 'Mattermost',
+                        siteName: 'grommunio-desktop',
                         siteURL: 'https://mainserver.com/',
                     };
                 }),
@@ -454,7 +454,7 @@ describe('app/serverViewState', () => {
                     }
                     return {
                         serverVersion: '7.8.0',
-                        siteName: 'Mattermost',
+                        siteName: 'grommunio-desktop',
                         siteURL: 'https://mainserver.com/',
                     };
                 }),
@@ -471,7 +471,7 @@ describe('app/serverViewState', () => {
                 fetchConfigData: jest.fn().mockImplementation(() => {
                     return {
                         serverVersion: '7.8.0',
-                        siteName: 'Mattermost',
+                        siteName: 'grommunio-desktop',
                         siteURL: 'https://mainserver.com',
                     };
                 }),

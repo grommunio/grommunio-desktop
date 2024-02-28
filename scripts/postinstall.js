@@ -2,8 +2,10 @@
 // See LICENSE.txt for license information.
 
 const fs = require('fs');
-const jq = require('node-jq');
+
 const path = require('path');
+
+const jq = require('node-jq');
 
 // Patch the macos-notification-state library so we can build correctly
 jq.run(
@@ -19,20 +21,20 @@ jq.run(
 // For linux dev, drop a desktop shortcut so deep linking works correctly
 if (process.platform === 'linux') {
     const xdgDir = path.resolve(process.env.HOME, '.local/share/applications');
-    if (fs.existsSync(xdgDir) && !fs.existsSync(path.resolve(xdgDir, 'grommunio-desktop-dev.desktop'))) {
+    if (fs.existsSync(xdgDir) && !fs.existsSync(path.resolve(xdgDir, 'grommunio.desktop'))) {
         fs.writeFileSync(
-            path.resolve(xdgDir, 'grommunio-desktop-dev.desktop'),
-`[Desktop Entry]
-Name=Mattermost.Dev
-Exec=${path.resolve(process.cwd(), 'node_modules/electron/dist/electron')} ${path.resolve(process.cwd(), 'dist')} %U
-Terminal=false
-Type=Application
-Icon=grommunio-desktop
-StartupWMClass=Mattermost
-Comment=Mattermost
-MimeType=x-scheme-handler/mattermost-dev;
-Categories=contrib/net;
-`
+            path.resolve(xdgDir, 'grommunio.desktop'),
+            `[Desktop Entry]
+            Name=grommunio-desktop.Dev
+            Exec=${path.resolve(process.cwd(), 'node_modules/electron/dist/electron')} ${path.resolve(process.cwd(), 'dist')} %U
+            Terminal=false
+            Type=Application
+            Icon=grommunio-desktop
+            StartupWMClass=Mattermost
+            Comment=Mattermost
+            MimeType=x-scheme-handler/mattermost-dev;
+            Categories=contrib/net;
+            `,
         );
 
         const defaultsListPath = path.resolve(xdgDir, 'defaults.list');

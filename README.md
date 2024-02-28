@@ -1,6 +1,6 @@
 # grommunio Desktop
 
-[Mattermost](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. This repo is for the native desktop application that's built on [Electron](http://electron.atom.io/); it runs on Windows, Mac, and Linux.
+[grommunio-chat](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. This repo is for the native desktop application that's built on [Electron](http://electron.atom.io/); it runs on Windows, Mac, and Linux.
 
 Originally created as "electron-mattermost" by Yuya Ochiai.
 
@@ -33,15 +33,15 @@ You can show the dialog from menu bar.
 
 Configuration will be saved into Electron's userData directory:
 
-* `%APPDATA%\Mattermost` on Windows
-* `~/Library/Application Support/Mattermost` on OS X
-* `~/.config/Mattermost` on Linux
+* `%APPDATA%\grommunio-desktop` on Windows
+* `~/Library/Application Support/grommunio-desktop` on OS X
+* `~/.config/grommunio-desktop` on Linux
 
 A custom data directory location can be specified with:
 
-* `Mattermost.exe --args --data-dir C:\my-mattermost-data` on Windows
-* `open /Applications/Mattermost.app/ --args --data-dir ~/my-mattermost-data/` on macOS 
-* `./grommunio-desktop --args --data-dir ~/my-mattermost-data/` on Linux
+* `grommunio-desktop.exe --args --data-dir C:\my-grommunio-desktop-data` on Windows
+* `open /Applications/grommunio-desktop.app/ --args --data-dir ~/my-grommunio-desktop-data/` on macOS 
+* `./grommunio-desktop --args --data-dir ~/my-grommunio-desktop-data/` on Linux
 
 ## Custom App Deployments
 Our [docs provide a guide](https://docs.mattermost.com/deployment/desktop-app-deployment.html) on how to customize and distribute your own grommunio Desktop App, including how to distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings.

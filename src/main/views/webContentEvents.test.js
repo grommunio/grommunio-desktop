@@ -45,7 +45,7 @@ jest.mock('main/app/utils', () => ({
 jest.mock('../../../electron-builder.json', () => ({
     protocols: [
         {
-            name: 'Mattermost',
+            name: 'grommunio-desktop',
             schemes: ['mattermost'],
         },
     ],

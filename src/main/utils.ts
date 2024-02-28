@@ -106,7 +106,7 @@ export function composeUserAgent() {
     // filter out the grommunio-desktop tag that gets added earlier on
     const filteredUserAgent = baseUserAgent.filter((ua) => !ua.startsWith('Mattermost'));
 
-    return `${filteredUserAgent.join(' ')} Mattermost/${app.getVersion()}`;
+    return `${filteredUserAgent.join(' ')} grommunio-desktop/${app.getVersion()}`;
 }
 
 export function isStringWithLength(string: unknown): boolean {

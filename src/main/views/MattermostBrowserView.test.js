@@ -54,7 +54,7 @@ jest.mock('../contextMenu', () => jest.fn());
 jest.mock('../utils', () => ({
     getWindowBoundaries: jest.fn(),
     getLocalPreload: (file) => file,
-    composeUserAgent: () => 'Mattermost/5.0.0',
+    composeUserAgent: () => 'grommunio-desktop/5.0.0',
     shouldHaveBackBar: jest.fn(),
 }));
 
@@ -469,12 +469,12 @@ describe('main/views/MattermostBrowserView', () => {
         const mattermostView = new MattermostBrowserView(view, {}, {});
 
         it('should parse mentions from title', () => {
-            mattermostView.updateMentionsFromTitle('(7) Mattermost');
+            mattermostView.updateMentionsFromTitle('(7) grommunio-desktop');
             expect(AppState.updateMentions).toHaveBeenCalledWith(mattermostView.view.id, 7);
         });
 
         it('should parse unreads from title', () => {
-            mattermostView.updateMentionsFromTitle('* Mattermost');
+            mattermostView.updateMentionsFromTitle('* grommunio-desktop');
             expect(AppState.updateMentions).toHaveBeenCalledWith(mattermostView.view.id, 0);
         });
     });

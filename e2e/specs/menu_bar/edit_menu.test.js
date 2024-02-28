@@ -39,7 +39,7 @@ describe('edit_menu', function desc() {
 
         // click on sint channel
         await firstServer.click('#post_textbox');
-        await firstServer.type('#post_textbox', 'Mattermost');
+        await firstServer.type('#post_textbox', 'grommunio-desktop');
         await firstServer.click('#post_textbox');
         robot.keyTap('z', [env.cmdOrCtrl]);
         await asyncSleep(500);
@@ -55,7 +55,7 @@ describe('edit_menu', function desc() {
 
         // click on sint channel
         await firstServer.click('#post_textbox');
-        await firstServer.type('#post_textbox', 'Mattermost');
+        await firstServer.type('#post_textbox', 'grommunio-desktop');
         await firstServer.click('#post_textbox');
         robot.keyTap('z', [env.cmdOrCtrl]);
         await asyncSleep(500);
@@ -65,7 +65,7 @@ describe('edit_menu', function desc() {
         robot.keyTap('z', ['shift', env.cmdOrCtrl]);
         await asyncSleep(500);
         const content = await firstServer.inputValue('#post_textbox');
-        content.should.be.equal('Mattermost');
+        content.should.be.equal('grommunio-desktop');
     });
 
     it('MM-T809 Cut in the Menu Bar', async () => {
@@ -76,7 +76,7 @@ describe('edit_menu', function desc() {
 
         // click on sint channel
         await firstServer.click('#post_textbox');
-        await firstServer.type('#post_textbox', 'Mattermost');
+        await firstServer.type('#post_textbox', 'grommunio-desktop');
         robot.keyTap('a', [env.cmdOrCtrl]);
         await asyncSleep(500);
         robot.keyTap('x', [env.cmdOrCtrl]);
@@ -93,7 +93,7 @@ describe('edit_menu', function desc() {
 
         // click on sint channel
         await firstServer.click('#post_textbox');
-        await firstServer.type('#post_textbox', 'Mattermost');
+        await firstServer.type('#post_textbox', 'grommunio-desktop');
         robot.keyTap('a', [env.cmdOrCtrl]);
         await asyncSleep(500);
         robot.keyTap('c', [env.cmdOrCtrl]);
@@ -113,7 +113,7 @@ describe('edit_menu', function desc() {
 
         // click on sint channel
         await firstServer.click('#post_textbox');
-        await firstServer.type('#post_textbox', 'Mattermost');
+        await firstServer.type('#post_textbox', 'grommunio-desktop');
         robot.keyTap('a', [env.cmdOrCtrl]);
         await asyncSleep(500);
         robot.keyTap('c', [env.cmdOrCtrl]);
@@ -123,7 +123,7 @@ describe('edit_menu', function desc() {
         robot.keyTap('v', [env.cmdOrCtrl]);
         await asyncSleep(500);
         const content = await firstServer.inputValue('#post_textbox');
-        content.should.be.equal('Mattermost');
+        content.should.be.equal('grommunio-desktop');
     });
 
     it('MM-T812 Select All in the Menu Bar', async () => {
@@ -134,10 +134,10 @@ describe('edit_menu', function desc() {
 
         // click on sint channel
         await firstServer.click('#post_textbox');
-        await firstServer.fill('#post_textbox', 'Mattermost');
+        await firstServer.fill('#post_textbox', 'grommunio-desktop');
         robot.keyTap('a', [env.cmdOrCtrl]);
         await asyncSleep(500);
         const channelHeaderText = await firstServer.evaluate('window.getSelection().toString()');
-        channelHeaderText.should.equal('Mattermost');
+        channelHeaderText.should.equal('grommunio-desktop');
     });
 });
