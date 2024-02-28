@@ -41,7 +41,7 @@
     "renderer.components.newServerModal.title.add": "Aggiungi server",
     "renderer.components.input.required": "Questo campo è richiesto",
     "renderer.components.newServerModal.serverURL": "URL del server",
-    "renderer.components.mainPage.titleBar": "Mattermost",
+    "renderer.components.mainPage.titleBar": "grommunio-desktop",
     "renderer.components.extraBar.back": "Indietro",
     "renderer.components.configureServer.url.placeholder": "URL del server",
     "main.windows.mainWindow.closeApp.dialog.checkboxLabel": "Non chiedermelo più",

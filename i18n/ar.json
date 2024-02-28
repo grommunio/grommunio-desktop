@@ -11,7 +11,7 @@
     "main.app.app.handleAppCertificateError.certNotTrusted.button.trustInsecureCertificate": "مصادقه الشهاده غير الامنة",
     "main.app.app.handleAppCertificateError.certNotTrusted.button.cancelConnection": "إلغاء الاتصال",
     "main.app.app.handleAppCertificateError.certError.dialog.title": "خطأ فى الشهاده",
-    "main.app.app.handleAppCertificateError.certError.dialog.message": "هناك مشكلة في الاعدادات مع خادم Mattermost هذا ، أو أن شخصًا ما يحاول اعتراض اتصالك. قد تحتاج أيضًا إلى تسجيل الدخول إلى شبكة Wi-Fi التي تتصل بها باستخدام متصفح الويب الخاص بك.",
+    "main.app.app.handleAppCertificateError.certError.dialog.message": "هناك مشكلة في الاعدادات مع خادم grommunio-desktop هذا ، أو أن شخصًا ما يحاول اعتراض اتصالك. قد تحتاج أيضًا إلى تسجيل الدخول إلى شبكة Wi-Fi التي تتصل بها باستخدام متصفح الويب الخاص بك.",
     "main.app.app.handleAppCertificateError.certError.button.moreDetails": "تفاصيل اكثر",
     "main.app.app.handleAppCertificateError.certError.button.cancelConnection": "ألغاء الاتصال",
     "main.allowProtocolDialog.title": "ليس http(s) بروتوكول",
