@@ -49,6 +49,18 @@ module.exports = {
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     },
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+        ],
+    },
 };
 
 /* eslint-enable import/no-commonjs */
