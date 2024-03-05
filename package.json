@@ -4,7 +4,7 @@
   "version": "5.6.0",
   "description": "grommunio-desktop",
   "main": "dist/index.js",
-  "author": "grommunio GmbH",
+  "author": "grommunio GmbH <info@grommunio.com>",
   "license": "Apache-2.0",
   "desktopName": "grommunio.Desktop",
   "homepage": "https://mattermost.com",
