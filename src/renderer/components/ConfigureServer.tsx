@@ -62,8 +62,6 @@ function ConfigureServer({
 
     const [validating, setValidating] = useState(false);
     const validationTimestamp = useRef<number>();
-    const validationTimeout = useRef<NodeJS.Timeout>();
-    const editing = useRef(false);
 
     const canSave = name && url && !nameError && !validating && urlError && urlError.type !== STATUS.ERROR;
 
@@ -85,11 +83,6 @@ function ConfigureServer({
         const requestTime = Date.now();
         validationTimestamp.current = requestTime;
         validateURL(urlToValidate).then(({validatedURL, serverName, message}) => {
-            if (editing.current) {
-                setValidating(false);
-                setURLError(undefined);
-                return;
-            }
             if (!validationTimestamp.current || requestTime < validationTimestamp.current) {
                 return;
             }
@@ -202,16 +195,11 @@ function ConfigureServer({
         if (urlError) {
             setURLError(undefined);
         }
+    };
 
-        editing.current = true;
-        clearTimeout(validationTimeout.current as unknown as number);
-        validationTimeout.current = setTimeout(() => {
-            if (!mounted.current) {
-                return;
-            }
-            editing.current = false;
-            fetchValidationResult(value);
-        }, 1000);
+    // when focus on name, check if url is valid
+    const handleNameOnFocus = () => {
+        fetchValidationResult(url);
     };
 
     const handleOnSaveButtonClick = (e: React.MouseEvent) => {
@@ -351,6 +339,7 @@ function ConfigureServer({
                                         inputSize={SIZE.LARGE}
                                         value={name}
                                         onChange={handleNameOnChange}
+                                        onFocus={handleNameOnFocus}
                                         customMessage={nameError ? ({
                                             type: STATUS.ERROR,
                                             value: nameError,
