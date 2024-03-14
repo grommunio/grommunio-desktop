@@ -20,7 +20,7 @@ Based on Mattermost Desktop 5.6.0
  - Windows:
    - zip-file: `npm run package:windows` \
         or
-   - msi-installer: `./scripts/Makefile.ps1 build` & `git reset --hard HEAD`
+   - msi-installer: `./scripts/Makefile.ps1 build` & `git add -A; git reset --hard HEAD`
 
 ## Signing
 
@@ -37,7 +37,7 @@ Based on Mattermost Desktop 5.6.0
 ### Errors
 #### *...\scripts\msi_installer.wxs : Duplicate symbol 'Property:...' found*
 on Windows
-- run `git reset --hard HEAD` after every msi-build \
+- run `git add -A; git reset --hard HEAD` after every msi-build \
     or
 - remove `Property:...`-line in `.\scripts\msi_installer.wxs`
 
