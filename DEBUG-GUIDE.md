@@ -44,3 +44,9 @@ on Windows
 #### Can not remove .dll-file
 on Windows
 - close all grommunio-chat Windows & also close it in the Task-Manager
+
+### *Command failed: ... /grommunio-chat.app: rejected*
+on Mac:
+> Command failed: spctl --assess --type execute --verbose --ignore-cache --no-cache /Users/jensherman/Code/grommunio-chat-desktop/release/mac/grommunio-chat.app /Users/jensherman/Code/grommunio-chat-desktop/release/mac/grommunio-chat.app: rejected
+
+- no impact noticed -> build will be produced anyway, so just ignore it
