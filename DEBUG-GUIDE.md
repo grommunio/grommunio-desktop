@@ -1,0 +1,46 @@
+# grommunio chat Desktop v5.6.0
+Based on Mattermost Desktop 5.6.0
+
+[Manual for setup](https://developers.mattermost.com/contribute/more-info/desktop/developer-setup/) \
+[Manual for packaging](https://developers.mattermost.com/contribute/more-info/desktop/packaging-and-releasing/)
+
+## Building
+**You have to build the app for a specific os on the respective os**
+
+- `npm install`
+- `npm run clean` -> cleans installation, release, cache, ...
+- `npm run build`
+- `npm run start`
+- (`npm run watch`)
+
+## Packaging
+ - `npm run build`
+ - MacOS: `npm run package:mac`
+ - Linux: `npm run package:linux`
+ - Windows:
+   - zip-file: `npm run package:windows` \
+        or
+   - msi-installer: `./scripts/Makefile.ps1 build` & `git reset --hard HEAD`
+
+## Signing
+
+- MacOS: automatically with Certificate in KeyChain
+- Windows:
+  - need `.pfx`-file
+
+## Debugging
+### Problems with node-packages
+- `npm run clean`
+- `rm package-lock.json`
+- `npm install`
+
+### Errors
+#### *...\scripts\msi_installer.wxs : Duplicate symbol 'Property:...' found*
+on Windows
+- run `git reset --hard HEAD` after every msi-build \
+    or
+- remove `Property:...`-line in `.\scripts\msi_installer.wxs`
+
+#### Can not remove .dll-file
+on Windows
+- close all grommunio-chat Windows & also close it in the Task-Manager
