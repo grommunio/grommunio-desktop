@@ -7,8 +7,12 @@ Based on Mattermost Desktop 5.6.0
 ## Building
 **You have to build the app for a specific os on the respective os**
 
-- `npm install`
-- `npm run clean` -> cleans installation, release, cache, ...
+
+- Clean:
+  - `npm run clean` -> cleans installation, release, cache, ...
+  - `npm install` \
+    or
+  - `rm -r release` -> no reinstallation necessary
 - `npm run build`
 - `npm run start`
 - (`npm run watch`)

@@ -88,10 +88,14 @@ class NewServerModal extends React.PureComponent<Props, State> {
         });
     }
 
+    // when focus on name, check if url is valid
+    handleServerNameFocus = () => {
+        this.validateServerURL(this.state.serverUrl);
+    };
+
     handleServerUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const serverUrl = e.target.value;
         this.setState({serverUrl, validationResult: undefined});
-        this.validateServerURL(serverUrl);
     }
 
     validateServerURL = (serverUrl: string) => {
@@ -410,6 +414,7 @@ class NewServerModal extends React.PureComponent<Props, State> {
                                 onClick={(e: React.MouseEvent<HTMLInputElement>) => {
                                     e.stopPropagation();
                                 }}
+                                onFocus={this.handleServerNameFocus}
                                 isInvalid={!this.state.serverName.length}
                             />
                             <FormControl.Feedback/>
