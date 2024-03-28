@@ -73,20 +73,11 @@ export class TrayIcon {
         }
         case 'linux':
         {
-            if (trayIconTheme === 'dark') {
-                this.images = {
-                    normal: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'top_bar_dark_16.png')),
-                    unread: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'top_bar_dark_unread_16.png')),
-                    mention: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'top_bar_dark_mention_16.png')),
-                };
-            } else {
-                //Fallback for invalid theme setting
-                this.images = {
-                    normal: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'top_bar_light_16.png')),
-                    unread: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'top_bar_light_unread_16.png')),
-                    mention: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'top_bar_light_mention_16.png')),
-                };
-            }
+            this.images = {
+                normal: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'normal.png')),
+                unread: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'unread.png')),
+                mention: nativeImage.createFromPath(path.resolve(assetsDir, 'linux', 'mention.png')),
+            };
             break;
         }
         default:
