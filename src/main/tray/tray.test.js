@@ -151,11 +151,10 @@ describe('main/tray', () => {
     });
 
     describe('linux - light', () => {
-        const theme = 'light';
         const linuxResultLight = {
-            normal: `top_bar_${theme}_16.png`,
-            unread: `top_bar_${theme}_unread_16.png`,
-            mention: `top_bar_${theme}_mention_16.png`,
+            normal: 'normal.png',
+            unread: 'unread.png',
+            mention: 'mention.png',
         };
         const originalPlatform = process.platform;
         Object.defineProperty(process, 'platform', {
@@ -171,11 +170,10 @@ describe('main/tray', () => {
     });
 
     describe('linux - dark', () => {
-        const theme = 'dark';
         const linuxResultDark = {
-            normal: `top_bar_${theme}_16.png`,
-            unread: `top_bar_${theme}_unread_16.png`,
-            mention: `top_bar_${theme}_mention_16.png`,
+            normal: 'normal.png',
+            unread: 'unread.png',
+            mention: 'mention.png',
         };
         const originalPlatform = process.platform;
         Object.defineProperty(process, 'platform', {
