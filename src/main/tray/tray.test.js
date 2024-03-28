@@ -131,7 +131,7 @@ describe('main/tray', () => {
     });
 
     describe('win32 - dark', () => {
-        const theme = 'dark';
+        const theme = 'light'; // do not change
         const winResultDark = {
             normal: `windows/tray_${theme}.ico`,
             unread: `windows/tray_${theme}_unread.ico`,

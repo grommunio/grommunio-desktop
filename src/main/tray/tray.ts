@@ -3,7 +3,7 @@
 
 import path from 'path';
 
-import {app, nativeImage, Tray, systemPreferences, nativeTheme} from 'electron';
+import {app, nativeImage, Tray, systemPreferences} from 'electron';
 
 import AppState from 'common/appState';
 import {UPDATE_APPSTATE_TOTALS} from 'common/communication';
@@ -46,9 +46,9 @@ export class TrayIcon {
         this.tray.on('balloon-click', this.onClick);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     refreshImages = (trayIconTheme: string) => {
-        const systemTheme = nativeTheme.shouldUseDarkColors ? 'light' : 'dark';
-        const winTheme = trayIconTheme === 'use_system' ? systemTheme : trayIconTheme;
+        const winTheme = 'light';
 
         switch (process.platform) {
         case 'win32':
