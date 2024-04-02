@@ -19,7 +19,7 @@ Based on Mattermost Desktop 5.6.0
 
 ## Packaging
  - `npm run build`
- - MacOS: `npm run package:mac`
+ - MacOS: `npm run package:mac-with-universal`
  - Linux: `npm run package:linux`
  - Windows:
    - zip-file: `npm run package:windows` \
