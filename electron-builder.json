@@ -158,7 +158,7 @@
         ]
       }
     ],
-    "publisherName": "CN=\"Mattermost, Inc.\", O=\"Mattermost, Inc.\", L=Palo Alto, S=California, C=US"
+    "publisherName": "CN=\"grommunio GmbH\", O=\"grommunio GmbH\", L=Vienna, C=AT"
   },
   "nsis": {
     "artifactName": "${version}/${name}-setup-${version}-win.${ext}",
