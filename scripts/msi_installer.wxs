@@ -35,7 +35,7 @@
   - there are any changes in the feature hierarchy (child
     feature moving out of a parent, or a parent feature getting a new child).
   -->
-  <Product Id="*" UpgradeCode="8523DAF0-699D-4CC7-9A65-C5E696A9DE6D" Name="grommunio Desktop" Manufacturer="Mattermost, Inc." Language="1033" Codepage="1252" Version="0.0.0">
+  <Product Id="*" UpgradeCode="8523DAF0-699D-4CC7-9A65-C5E696A9DE6D" Name="grommunio Desktop" Manufacturer="Mattermost, Inc." Language="1033" Codepage="1252" Version="5.6.0">
     <!--
     perMachine installs the app system wide (ALLUSERS is set to 1)
     src.: https://www.joyofsetup.com/2008/04/01/new-wix-feature-setting-package-installation-scope/
@@ -65,12 +65,12 @@
             <Component Id="MainExecutableShortcutDesktop" Guid="9C71385D-C892-48BA-A35D-D89A661D2952" Win64="$(var.Win64)">
               <Condition><![CDATA[ADDDESKTOPSHORTCUT = "true"]]></Condition>
               <RegistryValue Id="RegShortcutDesktop" Root="HKCU" Key="SOFTWARE\grommunio\Desktop\settings" Name="MattermostDesktopShortcutDesktop" Value="1" Type="integer" KeyPath="yes" />
-              <Shortcut Id="MattermostDesktopShortcutDesktop" Directory="DesktopFolder" Name="grommunio-desktop" WorkingDirectory="INSTALLDIR" Icon="grommunio-desktop.ico" IconIndex="0" Advertise="no" Target="[INSTALLDIR]grommunio-desktop.exe" />
+              <Shortcut Id="MattermostDesktopShortcutDesktop" Directory="DesktopFolder" Name="grommunio-desktop" WorkingDirectory="INSTALLDIR" Icon="grommunio_desktop.ico" IconIndex="0" Advertise="no" Target="[INSTALLDIR]grommunio-desktop.exe" />
             </Component>
             <Component Id="MainExecutableShortcutStartMenu" Guid="DF2028FF-7E03-407B-A46A-726E1B67DF83" Win64="$(var.Win64)">
               <Condition><![CDATA[ADDSTARTMENUSHORTCUT = "true"]]></Condition>
               <RegistryValue Id="RegShortcutStartMenu" Root="HKCU" Key="SOFTWARE\Mattermost\Desktop\settings" Name="MattermostDesktopShortcutStartMenu" Value="1" Type="integer" KeyPath="yes" />
-              <Shortcut Id="MattermostDesktopShortcutStartMenu" Directory="ProgramMenuDir" Name="grommunio-desktop" WorkingDirectory="INSTALLDIR" Icon="grommunio-desktop.ico" IconIndex="0" Advertise="no" Target="[INSTALLDIR]grommunio-desktop.exe">
+              <Shortcut Id="MattermostDesktopShortcutStartMenu" Directory="ProgramMenuDir" Name="grommunio-desktop" WorkingDirectory="INSTALLDIR" Icon="grommunio_desktop.ico" IconIndex="0" Advertise="no" Target="[INSTALLDIR]grommunio-desktop.exe">
                 <ShortcutProperty Key="System.AppUserModel.ID" Value="grommunio.Desktop" />
               </Shortcut>
             </Component>
@@ -129,8 +129,8 @@
     </InstallExecuteSequence>
     <CustomAction Id="LaunchApp" FileKey="MattermostDesktopEXE" ExeCommand="" Return="asyncNoWait" />
     <CustomAction Id="KillApp" Directory="INSTALLDIR" Return="ignore" ExeCommand="&quot;[SystemFolder]taskkill.exe&quot; /F /IM &quot;grommunio-desktop.exe&quot;" />
-    <Icon Id="grommunio-desktop.ico" SourceFile="../src/assets/icon.ico" />
-    <Property Id="ARPPRODUCTICON">grommunio-desktop.ico</Property>
+    <Icon Id="grommunio_desktop.ico" SourceFile="../src/assets/icon.ico" />
+    <Property Id="ARPPRODUCTICON">grommunio_desktop.ico</Property>
     <Property Id="ARPCONTACT">https://pre-release.mattermost.com</Property>
     <Property Id="ARPHELPLINK">https://docs.mattermost.com/</Property>
     <Property Id="ARPURLINFOABOUT">https://mattermost.com/</Property>
