@@ -60,8 +60,8 @@ export class TrayIcon {
             break;
         case 'darwin':
         {
-            const osxNormal = nativeImage.createFromPath(path.resolve(assetsDir, 'osx/menuIcons/MenuIcon16Template.png'));
-            const osxUnread = nativeImage.createFromPath(path.resolve(assetsDir, 'osx/menuIcons/MenuIconUnread16Template.png'));
+            const osxNormal = nativeImage.createFromPath(path.resolve(assetsDir, 'osx/menuIcons/normal.png'));
+            const osxUnread = nativeImage.createFromPath(path.resolve(assetsDir, 'osx/menuIcons/unread.png'));
             osxNormal.setTemplateImage(true);
             osxUnread.setTemplateImage(true);
 
