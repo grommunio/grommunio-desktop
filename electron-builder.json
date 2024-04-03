@@ -2,7 +2,7 @@
   "publish": [
     {
     "provider": "generic",
-    "url": "https://download.grommunio.com/desktop/"
+    "url": "https://download.grommunio.com/desktop"
     }
   ],
   "appId": "grommunio.Desktop",
