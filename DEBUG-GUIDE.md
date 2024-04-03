@@ -1,4 +1,4 @@
-# grommunio chat Desktop v5.6.0
+# grommunio chat desktop v5.6.0
 Based on Mattermost Desktop 5.6.0
 
 [Manual for setup](https://developers.mattermost.com/contribute/more-info/desktop/developer-setup/) \
@@ -47,10 +47,10 @@ on Windows
 
 #### Can not remove .dll-file
 on Windows
-- close all grommunio-chat Windows & also close it in the Task-Manager
+- close all grommunio-desktop Windows & also close it in the Task-Manager
 
-### *Command failed: ... /grommunio-chat.app: rejected*
+### *Command failed: ... /grommunio-desktop.app: rejected*
 on Mac:
-> Command failed: spctl --assess --type execute --verbose --ignore-cache --no-cache /Users/jensherman/Code/grommunio-chat-desktop/release/mac/grommunio-chat.app /Users/jensherman/Code/grommunio-chat-desktop/release/mac/grommunio-chat.app: rejected
+> Command failed: spctl --assess --type execute --verbose --ignore-cache --no-cache /Users/jensherman/Code/grommunio-chat-desktop/release/mac/grommunio-desktop.app /Users/jensherman/Code/grommunio-chat-desktop/release/mac/grommunio-desktop.app: rejected
 
 - no impact noticed -> build will be produced anyway, so just ignore it
