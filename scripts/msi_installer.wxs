@@ -131,9 +131,9 @@
     <CustomAction Id="KillApp" Directory="INSTALLDIR" Return="ignore" ExeCommand="&quot;[SystemFolder]taskkill.exe&quot; /F /IM &quot;grommunio-desktop.exe&quot;" />
     <Icon Id="grommunio_desktop.ico" SourceFile="../src/assets/icon.ico" />
     <Property Id="ARPPRODUCTICON">grommunio_desktop.ico</Property>
-    <Property Id="ARPCONTACT">https://pre-release.mattermost.com</Property>
-    <Property Id="ARPHELPLINK">https://docs.mattermost.com/</Property>
-    <Property Id="ARPURLINFOABOUT">https://mattermost.com/</Property>
+    <Property Id="ARPCONTACT">https://grommunio.com</Property>
+    <Property Id="ARPHELPLINK">https://docs.grommunio.com/</Property>
+    <Property Id="ARPURLINFOABOUT">https://grommunio.com/</Property>
     <!--
       Next line will be added by `Makefile.ps1`, leaving it here for reference, as it will be added before constructing the MSI
       <Property Id="ComponentDownload">https://releases.mattermost.com/desktop/0.0.0/grommunio-desktop-0.0.0-$(var.Platform).msi</Property> 

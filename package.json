@@ -7,7 +7,7 @@
   "author": "grommunio GmbH <info@grommunio.com>",
   "license": "Apache-2.0",
   "desktopName": "grommunio.Desktop",
-  "homepage": "https://mattermost.com",
+  "homepage": "https://grommunio.com",
   "engines": {
     "node": ">=16.16.0"
   },
