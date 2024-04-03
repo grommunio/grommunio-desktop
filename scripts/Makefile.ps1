@@ -506,7 +506,7 @@ function Run-BuildId {
     $msiDescriptor = [xml](Get-Content $msiDescriptorFileName)
     $msiDescriptor.Wix.Product.Version = [string]$env:COM_MATTERMOST_MAKEFILE_BUILD_ID_MSI
     $ComponentDownload = $msiDescriptor.CreateElement("Property", "http://schemas.microsoft.com/wix/2006/wi")
-    $ComponentDownload.InnerText = "https://releases.mattermost.com/desktop/$version/mattermost-desktop-$version-`$(var.Platform).msi"
+    $ComponentDownload.InnerText = "/desktop/$version/grommunio-desktop-$version-`$(var.Platform).msi"
     $ComponentDownload.SetAttribute("Id", "ComponentDownload")
     $msiDescriptor.Wix.Product.AppendChild($ComponentDownload)
     $msiDescriptor.Save($msiDescriptorFileName)

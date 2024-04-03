@@ -12,7 +12,7 @@ function print_link {
 }
 
 VERSION="$1" # such as 3.7.1, 4.0.0-rc1
-BASE_URL="https://releases.mattermost.com/desktop/${VERSION}"
+BASE_URL="https://download.grommunio.com/desktop/${VERSION}"
 
 cat <<-MD
 ### Mattermost Desktop v${VERSION} has been cut!
