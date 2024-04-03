@@ -92,9 +92,9 @@ describe('main/tray', () => {
 
     describe('darwin', () => {
         const darwinResultAllThemes = {
-            normal: 'osx/menuIcons/MenuIcon16Template.png',
-            unread: 'osx/menuIcons/MenuIconUnread16Template.png',
-            mention: 'osx/menuIcons/MenuIconUnread16Template.png',
+            normal: 'osx/menuIcons/normal.png',
+            unread: 'osx/menuIcons/unread.png',
+            mention: 'osx/menuIcons/mention.png',
         };
         const originalPlatform = process.platform;
         Object.defineProperty(process, 'platform', {
