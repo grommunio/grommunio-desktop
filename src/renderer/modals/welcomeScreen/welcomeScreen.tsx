@@ -8,7 +8,6 @@ import {UniqueServer} from 'types/config';
 
 import IntlProvider from 'renderer/intl_provider';
 
-import WelcomeScreen from '../../components/WelcomeScreen';
 import ConfigureServer from '../../components/ConfigureServer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,7 +20,6 @@ const onConnect = (data: UniqueServer) => {
 
 const WelcomeScreenModalWrapper = () => {
     const [darkMode, setDarkMode] = useState(false);
-    const [getStarted, setGetStarted] = useState(false);
     const [mobileView, setMobileView] = useState(false);
 
     const handleWindowResize = () => {
@@ -45,24 +43,13 @@ const WelcomeScreenModalWrapper = () => {
         };
     }, []);
 
-    const onGetStarted = () => {
-        setGetStarted(true);
-    };
-
     return (
         <IntlProvider>
-            {getStarted ? (
-                <ConfigureServer
-                    mobileView={mobileView}
-                    darkMode={darkMode}
-                    onConnect={onConnect}
-                />
-            ) : (
-                <WelcomeScreen
-                    darkMode={darkMode}
-                    onGetStarted={onGetStarted}
-                />
-            )}
+            <ConfigureServer
+                mobileView={mobileView}
+                darkMode={darkMode}
+                onConnect={onConnect}
+            />
         </IntlProvider>
     );
 };
