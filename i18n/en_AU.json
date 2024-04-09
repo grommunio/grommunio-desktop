@@ -38,7 +38,7 @@
     "label.add": "Add",
     "label.accept": "Accept",
     "common.tabs.TAB_PLAYBOOKS": "Playbooks",
-    "common.tabs.TAB_MESSAGING": "Channels",
+    "common.tabs.TAB_MESSAGING": "Chat",
     "common.tabs.TAB_FOCALBOARD": "Boards",
     "common.permissions.canBasicAuth": "Web Authentication",
     "renderer.modals.permission.permissionModal.body": "A site that's not included in your grommunio-chat server configuration requires access for {permission}.",

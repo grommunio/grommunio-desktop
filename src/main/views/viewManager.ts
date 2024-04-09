@@ -38,7 +38,7 @@ import {Logger} from 'common/log';
 import Utils from 'common/utils/util';
 import {MattermostServer} from 'common/servers/MattermostServer';
 import ServerManager from 'common/servers/serverManager';
-import {MattermostView, TAB_MESSAGING} from 'common/views/View';
+import {MattermostView, TAB_DESKTOP, TAB_MESSAGING} from 'common/views/View';
 import {getFormattedPathName, parseURL} from 'common/utils/url';
 
 import {localizeMessage} from 'main/i18nManager';
@@ -504,7 +504,7 @@ export class ViewManager {
         }
 
         // Special case check for Channels to not force a redirect to "/", causing a refresh
-        if (!(redirectedView !== currentView && redirectedView?.view.type === TAB_MESSAGING && cleanedPathName === '/')) {
+        if (!(redirectedView !== currentView && (redirectedView?.view.type === TAB_MESSAGING || redirectedView?.view.type === TAB_DESKTOP) && cleanedPathName === '/')) {
             redirectedView?.sendToRenderer(BROWSER_HISTORY_PUSH, cleanedPathName);
             if (redirectedView) {
                 this.handleBrowserHistoryButton(e, redirectedView.id);

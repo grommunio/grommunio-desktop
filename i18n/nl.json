@@ -4,7 +4,7 @@
     "label.add": "Toevoegen",
     "label.accept": "Accepteren",
     "common.tabs.TAB_PLAYBOOKS": "Playbooks",
-    "common.tabs.TAB_MESSAGING": "Channels",
+    "common.tabs.TAB_MESSAGING": "Chat",
     "common.tabs.TAB_FOCALBOARD": "Boards",
     "main.app.utils.migrateMacAppStore.button.dontImport": "Niet importeren",
     "main.app.initialize.downloadBox.allFiles": "Alle bestanden",
