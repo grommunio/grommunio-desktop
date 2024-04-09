@@ -1,7 +1,7 @@
 {
   "common.permissions.canBasicAuth": "Web Authentication",
   "common.tabs.TAB_FOCALBOARD": "Boards",
-  "common.tabs.TAB_MESSAGING": "Channels",
+  "common.tabs.TAB_MESSAGING": "Chat",
   "common.tabs.TAB_PLAYBOOKS": "Playbooks",
   "label.accept": "Accept",
   "label.add": "Add",

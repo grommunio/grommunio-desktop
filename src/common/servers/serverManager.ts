@@ -1,3 +1,5 @@
+/* eslint-disable header/header */
+// Copyright (c) 2020-present grommunio GmbH. All Rights Reserved.
 // Copyright (c) 2016-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
@@ -11,11 +13,12 @@ import Config from 'common/config';
 import {Logger, getLevel} from 'common/log';
 import {MattermostServer} from 'common/servers/MattermostServer';
 import {getFormattedPathName, isInternalURL, parseURL} from 'common/utils/url';
+import DesktopView from 'common/views/DesktopView';
 import FocalboardView from 'common/views/FocalboardView';
 import MessagingView from 'common/views/MessagingView';
 import PlaybooksView from 'common/views/PlaybooksView';
 import type {MattermostView} from 'common/views/View';
-import {TAB_FOCALBOARD, TAB_MESSAGING, TAB_PLAYBOOKS, getDefaultViews} from 'common/views/View';
+import {TAB_FOCALBOARD, TAB_MESSAGING, TAB_PLAYBOOKS, TAB_DESKTOP, getDefaultViews} from 'common/views/View';
 
 import type {Server, ConfigServer, ConfigView} from 'types/config';
 import type {RemoteInfo} from 'types/server';
@@ -357,6 +360,8 @@ export class ServerManager extends EventEmitter {
             return new FocalboardView(srv, isOpen);
         case TAB_PLAYBOOKS:
             return new PlaybooksView(srv, isOpen);
+        case TAB_DESKTOP:
+            return new DesktopView(srv, isOpen);
         default:
             throw new Error('Not implemeneted');
         }

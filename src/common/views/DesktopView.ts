@@ -1,19 +1,18 @@
 /* eslint-disable header/header */
 // Copyright (c) 2020-present grommunio GmbH. All Rights Reserved.
-// Copyright (c) 2016-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import BaseView from './BaseView';
 import type {ViewType} from './View';
-import {TAB_MESSAGING} from './View';
+import {TAB_DESKTOP} from './View';
 
-export default class MessagingView extends BaseView {
+export default class DesktopView extends BaseView {
     get url(): URL {
-        return new URL(`${this.server.url}/chat`);
+        return new URL('https://mail.grommunio.com');
     }
 
     get type(): ViewType {
-        return TAB_MESSAGING;
+        return TAB_DESKTOP;
     }
 
     get shouldNotify(): boolean {

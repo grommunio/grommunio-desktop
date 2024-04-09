@@ -42,7 +42,7 @@ import {SECOND, TAB_BAR_HEIGHT} from 'common/utils/constants';
 import {getFormattedPathName, parseURL} from 'common/utils/url';
 import Utils from 'common/utils/util';
 import type {MattermostView} from 'common/views/View';
-import {TAB_MESSAGING} from 'common/views/View';
+import {TAB_DESKTOP, TAB_MESSAGING} from 'common/views/View';
 import {flushCookiesStore} from 'main/app/utils';
 import {localizeMessage} from 'main/i18nManager';
 import MainWindow from 'main/windows/mainWindow';
@@ -518,7 +518,7 @@ export class ViewManager {
         }
 
         // Special case check for Channels to not force a redirect to "/", causing a refresh
-        if (!(redirectedView !== currentView && redirectedView?.view.type === TAB_MESSAGING && cleanedPathName === '/')) {
+        if (!(redirectedView !== currentView && (redirectedView?.view.type === TAB_MESSAGING || redirectedView?.view.type === TAB_DESKTOP) && cleanedPathName === '/')) {
             redirectedView?.sendToRenderer(BROWSER_HISTORY_PUSH, cleanedPathName);
             redirectedView?.updateHistoryButton();
         }
