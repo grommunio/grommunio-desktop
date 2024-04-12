@@ -12,7 +12,7 @@ import type {BrowserWindow} from 'electron';
 import {app} from 'electron';
 
 import {BACK_BAR_HEIGHT, customLoginRegexPaths, PRODUCTION, TAB_BAR_HEIGHT} from 'common/utils/constants';
-import {isAdminUrl, isPluginUrl, isTeamUrl, isUrlType, parseURL} from 'common/utils/url';
+import {isAdminUrl, isPluginUrl, isTeamUrl, isUrlType, parseURL, getFormattedPathName} from 'common/utils/url';
 import Utils from 'common/utils/util';
 
 import type {Args} from 'types/args';
@@ -48,7 +48,9 @@ export function getAdjustedWindowBoundaries(width: number, height: number, hasBa
 }
 
 export function shouldHaveBackBar(serverUrl: URL, inputURL: URL) {
-    if (isUrlType('login', serverUrl, inputURL)) {
+    const baseServerUrl = new URL(`https://${serverUrl.host}`);
+
+    if (isUrlType('login', baseServerUrl, inputURL) || isUrlType('auth', baseServerUrl, inputURL)) {
         const serverURL = parseURL(serverUrl);
         const subpath = serverURL ? serverURL.pathname : '';
         const parsedURL = parseURL(inputURL);
@@ -66,6 +68,12 @@ export function shouldHaveBackBar(serverUrl: URL, inputURL: URL) {
 
         return false;
     }
+
+    // back button for TAB_MEET
+    if (serverUrl.pathname === '/meet' && getFormattedPathName(serverUrl.toString()) !== getFormattedPathName(inputURL.toString())) {
+        return true;
+    }
+
     return !isTeamUrl(serverUrl, inputURL) && !isAdminUrl(serverUrl, inputURL) && !isPluginUrl(serverUrl, inputURL);
 }
 
