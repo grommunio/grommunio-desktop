@@ -186,11 +186,19 @@ export class ViewManager {
      */
 
     handleDeepLink = (url: string | URL) => {
+        log.debug(`loading deeplink ${url}`);
         if (url) {
             const parsedURL = parseURL(url)!;
             const view = ServerManager.lookupViewByURL(parsedURL, true);
             if (view) {
-                const urlWithSchema = `${view.url.origin}${getFormattedPathName(parsedURL.pathname)}${parsedURL.search}`;
+                let urlWithSchema: string;
+
+                // do not add '/' at the end of a deeplink (othwise '/meet'-links won't work)
+                if (parsedURL.search) {
+                    urlWithSchema = `${view.url.origin}${getFormattedPathName(parsedURL.pathname)}${parsedURL.search}`;
+                } else {
+                    urlWithSchema = `${view.url.origin}${parsedURL.pathname}`;
+                }
                 if (this.closedViews.has(view.id)) {
                     this.openClosedView(view.id, urlWithSchema);
                 } else {
@@ -398,7 +406,7 @@ export class ViewManager {
      * close, open, or reload views, taking care to reuse views and
      * preserve focus on the currently selected view. */
     private handleReloadConfiguration = () => {
-        log.debug('handleReloadConfiguration');
+        log.info('handleReloadConfiguration');
 
         const currentViewId: string | undefined = this.views.get(this.currentView as string)?.view.id;
 
