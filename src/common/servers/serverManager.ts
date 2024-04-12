@@ -15,11 +15,13 @@ import {
 } from 'common/communication';
 import {Logger, getLevel} from 'common/log';
 import {MattermostServer} from 'common/servers/MattermostServer';
-import {TAB_FOCALBOARD, TAB_MESSAGING, TAB_PLAYBOOKS, TAB_DESKTOP, MattermostView, getDefaultViews} from 'common/views/View';
+import {TAB_FOCALBOARD, TAB_MESSAGING, TAB_PLAYBOOKS, TAB_DESKTOP, TAB_FILES, TAB_MEET, MattermostView, getDefaultViews} from 'common/views/View';
 import MessagingView from 'common/views/MessagingView';
 import FocalboardView from 'common/views/FocalboardView';
 import PlaybooksView from 'common/views/PlaybooksView';
 import DesktopView from 'common/views/DesktopView';
+import FilesView from 'common/views/FilesView';
+import MeetView from 'common/views/MeetView';
 import {getFormattedPathName, isInternalURL, parseURL} from 'common/utils/url';
 
 const log = new Logger('ServerManager');
@@ -361,6 +363,10 @@ export class ServerManager extends EventEmitter {
             return new PlaybooksView(srv, isOpen);
         case TAB_DESKTOP:
             return new DesktopView(srv, isOpen);
+        case TAB_FILES:
+            return new FilesView(srv, isOpen);
+        case TAB_MEET:
+            return new MeetView(srv, isOpen);
         default:
             throw new Error('Not implemeneted');
         }

@@ -4,18 +4,18 @@
 import {getFormattedPathName} from 'common/utils/url';
 
 import BaseView from './BaseView';
-import {ViewType, TAB_DESKTOP} from './View';
+import {ViewType, TAB_MEET} from './View';
 
-export default class DesktopView extends BaseView {
+export default class MeetView extends BaseView {
     get url(): URL {
-        return new URL(`${this.server.url.origin}${getFormattedPathName(this.server.url.pathname)}web`);
+        return new URL(`${this.server.url.origin}${getFormattedPathName(this.server.url.pathname)}meet`);
     }
 
     get type(): ViewType {
-        return TAB_DESKTOP;
+        return TAB_MEET;
     }
 
     get shouldNotify(): boolean {
-        return true;
+        return false;
     }
 }
