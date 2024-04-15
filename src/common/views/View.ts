@@ -56,17 +56,14 @@ export function getDefaultViews() {
         {
             name: TAB_MESSAGING,
             order: 1,
-            isOpen: true,
         },
         {
             name: TAB_FILES,
             order: 2,
-            isOpen: true,
         },
         {
             name: TAB_MEET,
             order: 3,
-            isOpen: true,
         },
         {
             name: TAB_FOCALBOARD,

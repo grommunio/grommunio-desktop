@@ -169,11 +169,34 @@ export class ServerManager extends EventEmitter {
         this.servers.set(newServer.id, newServer);
 
         this.serverOrder.push(newServer.id);
+
         const viewOrder: string[] = [];
-        getDefaultViews().forEach((view) => {
-            const newView = this.getNewView(newServer, view.name, view.isOpen);
-            this.views.set(newView.id, newView);
-            viewOrder.push(newView.id);
+
+        // first add desktop view
+        const newView = this.getNewView(newServer, TAB_DESKTOP, true);
+        this.views.set(newView.id, newView);
+        viewOrder.push(newView.id);
+
+        // add other views (check if server has views with remoteConfig)
+        newServer.getRemoteInfo().then((remoteConfig) => {
+            getDefaultViews().slice(1).forEach((view) => {
+                let isOpen = view.isOpen || false;
+                switch (view.name) {
+                case TAB_MESSAGING:
+                    isOpen = view.isOpen || (remoteConfig?.hasChat || false);
+                    break;
+                case TAB_FILES:
+                    isOpen = view.isOpen || (remoteConfig?.hasFiles || false);
+                    break;
+                case TAB_MEET:
+                    isOpen = view.isOpen || (remoteConfig?.hasMeet || false);
+                    break;
+                }
+                log.warn(`view ${view.name} ${view.isOpen} ${isOpen}`);
+                const newView = this.getNewView(newServer, view.name, isOpen);
+                this.views.set(newView.id, newView);
+                viewOrder.push(newView.id);
+            });
         });
         this.viewOrder.set(newServer.id, viewOrder);
 

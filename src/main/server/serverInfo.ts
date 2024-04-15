@@ -20,7 +20,7 @@ export class ServerInfo {
     fetchConfigData = async () => {
         await this.getRemoteInfo<ClientConfig>(
             this.onGetConfig,
-            parseURL(`${this.server.url}/api/v4/config/client?format=old`),
+            parseURL(`${this.server.url}/api/v1/config/client`), // custom grommunio server api
         );
 
         return this.remoteInfo;
@@ -60,11 +60,11 @@ export class ServerInfo {
         this.remoteInfo.serverVersion = data.Version;
         this.remoteInfo.siteURL = data.SiteURL;
         this.remoteInfo.siteName = data.SiteName;
-        this.remoteInfo.hasFocalboard = this.remoteInfo.hasFocalboard || data.BuildBoards === 'true';
+        this.remoteInfo.hasChat = data.Env?.Chat;
+        this.remoteInfo.hasFiles = data.Env?.Files;
+        this.remoteInfo.hasMeet = data.Env?.Meet;
     }
 
     private onGetPlugins = (data: Array<{id: string; version: string}>) => {
-        this.remoteInfo.hasFocalboard = this.remoteInfo.hasFocalboard || data.some((plugin) => plugin.id === 'focalboard');
-        this.remoteInfo.hasPlaybooks = data.some((plugin) => plugin.id === 'playbooks');
     }
 }

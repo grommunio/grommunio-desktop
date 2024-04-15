@@ -12,7 +12,6 @@ import {ComparableCertificate} from 'types/certificate';
 import {PermissionType, TrustedOrigin} from 'types/trustedOrigin';
 
 import {Logger} from 'common/log';
-import {TAB_MESSAGING} from 'common/views/View';
 import {isValidURL} from 'common/utils/url';
 
 const log = new Logger('Validator');
@@ -219,7 +218,7 @@ function cleanServerWithViews(server: ConfigServer) {
         tabs: server.tabs.map((view) => {
             return {
                 ...view,
-                isOpen: view.name === TAB_MESSAGING ? true : view.isOpen,
+                isOpen: view.isOpen,
             };
         }),
     };
