@@ -15,10 +15,8 @@ import {
 } from 'common/communication';
 import {Logger, getLevel} from 'common/log';
 import {MattermostServer} from 'common/servers/MattermostServer';
-import {TAB_FOCALBOARD, TAB_MESSAGING, TAB_PLAYBOOKS, TAB_DESKTOP, TAB_FILES, TAB_MEET, MattermostView, getDefaultViews} from 'common/views/View';
+import {TAB_MESSAGING, TAB_DESKTOP, TAB_FILES, TAB_MEET, MattermostView, getDefaultViews} from 'common/views/View';
 import MessagingView from 'common/views/MessagingView';
-import FocalboardView from 'common/views/FocalboardView';
-import PlaybooksView from 'common/views/PlaybooksView';
 import DesktopView from 'common/views/DesktopView';
 import FilesView from 'common/views/FilesView';
 import MeetView from 'common/views/MeetView';
@@ -380,10 +378,6 @@ export class ServerManager extends EventEmitter {
         switch (viewName) {
         case TAB_MESSAGING:
             return new MessagingView(srv, isOpen);
-        case TAB_FOCALBOARD:
-            return new FocalboardView(srv, isOpen);
-        case TAB_PLAYBOOKS:
-            return new PlaybooksView(srv, isOpen);
         case TAB_DESKTOP:
             return new DesktopView(srv, isOpen);
         case TAB_FILES:

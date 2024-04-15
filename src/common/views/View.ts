@@ -11,14 +11,10 @@ export const TAB_DESKTOP = 'TAB_DESKTOP';
 export const TAB_MESSAGING = 'TAB_MESSAGING';
 export const TAB_FILES = 'TAB_FILES';
 export const TAB_MEET = 'TAB_MEET';
-export const TAB_FOCALBOARD = 'TAB_FOCALBOARD';
-export const TAB_PLAYBOOKS = 'TAB_PLAYBOOKS';
 export type ViewType = typeof TAB_DESKTOP |
                         typeof TAB_MESSAGING |
                         typeof TAB_FILES |
-                        typeof TAB_MEET |
-                        typeof TAB_FOCALBOARD |
-                        typeof TAB_PLAYBOOKS;
+                        typeof TAB_MEET;
 
 const grommunioTabs = [
     TAB_DESKTOP,
@@ -65,14 +61,6 @@ export function getDefaultViews() {
             name: TAB_MEET,
             order: 3,
         },
-        {
-            name: TAB_FOCALBOARD,
-            order: 4,
-        },
-        {
-            name: TAB_PLAYBOOKS,
-            order: 5,
-        },
     ];
 }
 
@@ -86,10 +74,6 @@ export function getViewDisplayName(viewType: ViewType) {
         return 'Files';
     case TAB_MEET:
         return 'Meet';
-    case TAB_FOCALBOARD:
-        return 'Boards';
-    case TAB_PLAYBOOKS:
-        return 'Playbooks';
     default:
         throw new Error('Not implemeneted');
     }

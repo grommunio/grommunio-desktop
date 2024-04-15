@@ -379,5 +379,3 @@ export function createMenu(config: Config, updateManager: UpdateManager) {
 }
 
 t('common.tabs.TAB_MESSAGING');
-t('common.tabs.TAB_FOCALBOARD');
-t('common.tabs.TAB_PLAYBOOKS');
