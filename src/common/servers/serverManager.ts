@@ -15,12 +15,10 @@ import {MattermostServer} from 'common/servers/MattermostServer';
 import {getFormattedPathName, isInternalURL, parseURL} from 'common/utils/url';
 import DesktopView from 'common/views/DesktopView';
 import FilesView from 'common/views/FilesView';
-import FocalboardView from 'common/views/FocalboardView';
 import MeetView from 'common/views/MeetView';
 import MessagingView from 'common/views/MessagingView';
-import PlaybooksView from 'common/views/PlaybooksView';
 import type {MattermostView} from 'common/views/View';
-import {TAB_FOCALBOARD, TAB_MESSAGING, TAB_PLAYBOOKS, TAB_DESKTOP, TAB_MEET, TAB_FILES, getDefaultViews} from 'common/views/View';
+import {TAB_MESSAGING, TAB_DESKTOP, TAB_MEET, TAB_FILES, getDefaultViews} from 'common/views/View';
 
 import type {Server, ConfigServer, ConfigView} from 'types/config';
 import type {RemoteInfo} from 'types/server';
@@ -381,10 +379,6 @@ export class ServerManager extends EventEmitter {
         switch (viewName) {
         case TAB_MESSAGING:
             return new MessagingView(srv, isOpen);
-        case TAB_FOCALBOARD:
-            return new FocalboardView(srv, isOpen);
-        case TAB_PLAYBOOKS:
-            return new PlaybooksView(srv, isOpen);
         case TAB_DESKTOP:
             return new DesktopView(srv, isOpen);
         case TAB_FILES:
