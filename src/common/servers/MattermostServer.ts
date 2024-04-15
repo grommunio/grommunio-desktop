@@ -4,6 +4,7 @@
 import {v4 as uuid} from 'uuid';
 
 import {parseURL} from 'common/utils/url';
+import {ServerInfo} from 'main/server/serverInfo';
 
 import type {UniqueServer, Server} from 'types/config';
 
@@ -36,5 +37,14 @@ export class MattermostServer {
             id: this.id,
             isPredefined: this.isPredefined,
         };
+    };
+
+    getRemoteInfo = async () => {
+        const serverInfo = new ServerInfo(this);
+        try {
+            return await serverInfo.fetchConfigData();
+        } catch (error) {
+            return undefined;
+        }
     };
 }

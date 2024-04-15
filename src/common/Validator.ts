@@ -219,7 +219,7 @@ function cleanServerWithViews(server: ConfigServer) {
         tabs: server.tabs.map((view) => {
             return {
                 ...view,
-                isOpen: view.name === TAB_MESSAGING ? true : view.isOpen,
+                isOpen: view.isOpen,
             };
         }),
     };

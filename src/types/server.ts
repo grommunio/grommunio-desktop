@@ -5,15 +5,20 @@ export type RemoteInfo = {
     serverVersion?: string;
     siteName?: string;
     siteURL?: string;
-    hasFocalboard?: boolean;
-    hasPlaybooks?: boolean;
+    hasChat?: boolean;
+    hasFiles?: boolean;
+    hasMeet?: boolean;
 };
 
 export type ClientConfig = {
     Version: string;
     SiteURL: string;
     SiteName: string;
-    BuildBoards: string;
+    Env: {
+        Chat: boolean;
+        Files: boolean;
+        Meet: boolean;
+    };
 }
 
 export type URLValidationResult = {
