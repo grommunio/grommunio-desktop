@@ -36,6 +36,14 @@ module.exports = {
             test: /\.(js|jsx|ts|tsx)?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
+        },
+        {
+            test: /\.(png|jpe?g|gif)$/i,
+            use: [
+                {
+                    loader: 'file-loader',
+                },
+            ],
         }],
     },
     devtool: isProduction ? undefined : 'inline-source-map',
