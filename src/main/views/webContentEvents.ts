@@ -99,7 +99,7 @@ export class WebContentsEventManager {
             const parsedURL = parseURL(url)!;
             const serverURL = this.getServerURLFromWebContentsId(webContentsId);
 
-            this.log(webContentsId).info(serverURL?.toString());
+            this.log(webContentsId).debug('server url', serverURL?.toString());
 
             if (serverURL && (isTeamUrl(serverURL, parsedURL) || isAdminUrl(serverURL, parsedURL) || isLoginUrl(serverURL, parsedURL) || this.isTrustedPopupWindow(webContentsId))) {
                 return;

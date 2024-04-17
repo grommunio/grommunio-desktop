@@ -92,6 +92,7 @@ export class MattermostBrowserView extends EventEmitter {
                 ipcMain.emit(CLOSE_DOWNLOADS_DROPDOWN);
             }
         });
+        this.browserView.webContents.on('will-prevent-unload', (event) => event.preventDefault());
 
         // Legacy handlers using the title/favicon
         this.browserView.webContents.on('page-title-updated', this.handleTitleUpdate);
