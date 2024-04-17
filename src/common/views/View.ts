@@ -75,7 +75,7 @@ export function getViewDisplayName(viewType: ViewType) {
     case TAB_MEET:
         return 'Meet';
     default:
-        throw new Error('Not implemeneted');
+        return undefined;
     }
 }
 

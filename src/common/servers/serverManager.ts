@@ -193,6 +193,9 @@ export class ServerManager extends EventEmitter {
                 }
                 log.warn(`view ${view.name} ${view.isOpen} ${isOpen}`);
                 const newView = this.getNewView(newServer, view.name, isOpen);
+                if (!newView) {
+                    return;
+                }
                 this.views.set(newView.id, newView);
                 viewOrder.push(newView.id);
             });
@@ -307,6 +310,9 @@ export class ServerManager extends EventEmitter {
         const viewOrder: string[] = [];
         configServer.tabs.sort((a, b) => a.order - b.order).forEach((view) => {
             const mattermostView = this.getNewView(server, view.name, view.isOpen);
+            if (!mattermostView) {
+                return;
+            }
             log.withPrefix(mattermostView.id).debug('initialized view');
 
             this.views.set(mattermostView.id, mattermostView);
@@ -386,7 +392,7 @@ export class ServerManager extends EventEmitter {
         case TAB_MEET:
             return new MeetView(srv, isOpen);
         default:
-            throw new Error('Not implemeneted');
+            return undefined;
         }
     };
 
