@@ -24,6 +24,7 @@ export type ConfigServer = Server & {
 export type UniqueServer = Server & {
     id?: string;
     isPredefined?: boolean;
+    serviceTabs: boolean;
 }
 
 export type UniqueView = View & {

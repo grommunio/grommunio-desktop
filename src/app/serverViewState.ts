@@ -129,7 +129,7 @@ export class ServerViewState {
             return;
         }
 
-        const modalPromise = ModalManager.addModal<null, Server>(
+        const modalPromise = ModalManager.addModal<null, UniqueServer>(
             'newServer',
             getLocalURLString('newServer.html'),
             getLocalPreload('internalAPI.js'),
@@ -276,7 +276,7 @@ export class ServerViewState {
             return {status: URLValidationStatus.NotMattermost, validatedURL: parsedURL.toString()};
         }
 
-        const remoteServerName = remoteInfo.siteName === 'grommunio' ? remoteURL.host.split('.')[0] : remoteInfo.siteName;
+        const remoteServerName = remoteInfo.siteName;
 
         // If we were only able to connect via HTTP, warn the user that the connection is not secure
         if (remoteURL.protocol === 'http:') {

@@ -29,6 +29,7 @@ type Props = {
 type State = {
     serverName: string;
     serverUrl: string;
+    serverServiceTabs: boolean;
     serverId?: string;
     serverOrder: number;
     saveStarted: boolean;
@@ -54,6 +55,7 @@ class NewServerModal extends React.PureComponent<Props, State> {
         this.state = {
             serverName: '',
             serverUrl: '',
+            serverServiceTabs: true,
             serverOrder: props.currentOrder || 0,
             saveStarted: false,
             validationStarted: false,
@@ -72,6 +74,7 @@ class NewServerModal extends React.PureComponent<Props, State> {
         this.setState({
             serverName: this.props.server ? this.props.server.name : '',
             serverUrl: this.props.server ? this.props.server.url : '',
+            serverServiceTabs: this.props.server ? this.props.server.serviceTabs : true,
             serverId: this.props.server?.id,
             saveStarted: false,
             validationStarted: false,
@@ -88,6 +91,12 @@ class NewServerModal extends React.PureComponent<Props, State> {
             serverName: e.target.value,
         });
     };
+
+    handleServerServiceTabsChange = () => {
+        this.setState({
+            serverServiceTabs: !this.state.serverServiceTabs,
+        });
+    }
 
     // when focus on name, check if url is valid
     handleServerNameFocus = () => {
@@ -290,6 +299,7 @@ class NewServerModal extends React.PureComponent<Props, State> {
             this.props.onSave?.({
                 url: this.state.serverUrl,
                 name: this.state.serverName,
+                serviceTabs: this.state.serverServiceTabs,
                 id: this.state.serverId,
             });
         });
@@ -426,6 +436,30 @@ class NewServerModal extends React.PureComponent<Props, State> {
                                 />
                             </FormText>
                         </FormGroup>
+                        <label
+                            style={{
+                                color: 'rgba(var(--center-channel-text-rgb), 0.64)',
+                                marginTop: 22,
+                                fontFamily: 'Metropolis',
+                                fontSize: '14px',
+                                fontStyle: 'normal',
+                                lineHeight: '20px',
+                            }}
+                        >
+                            <input
+                                type='checkbox'
+                                style={{
+                                    marginRight: 10,
+                                    marginTop: 1,
+                                }}
+                                checked={this.state.serverServiceTabs}
+                                onChange={this.handleServerServiceTabsChange}
+                            />
+                            <FormattedMessage
+                                id='renderer.components.configureServer.serviceTabs.info'
+                                defaultMessage='Show other service tabs'
+                            />
+                        </label>
                     </form>
                     <div
                         className='NewServerModal-validation'

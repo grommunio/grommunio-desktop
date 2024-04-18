@@ -139,6 +139,7 @@
   "renderer.components.configureServer.connect.saving": "Connecting…",
   "renderer.components.configureServer.name.info": "The name that will be displayed in your server list",
   "renderer.components.configureServer.name.placeholder": "Server display name",
+  "renderer.components.configureServer.serviceTabs.info": "Show other service tabs",
   "renderer.components.configureServer.subtitle": "Set up your first server to connect to your<br></br>team’s communication hub",
   "renderer.components.configureServer.title": "Let’s connect to a server",
   "renderer.components.configureServer.url.info": "The URL of your grommunio server",

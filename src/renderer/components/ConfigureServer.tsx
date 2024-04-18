@@ -48,6 +48,7 @@ function ConfigureServer({
     const {
         name: prevName,
         url: prevURL,
+        serviceTabs: prevServiceTabs,
         id,
     } = server || {};
 
@@ -55,6 +56,7 @@ function ConfigureServer({
     const [transition, setTransition] = useState<'inFromRight' | 'outToLeft'>();
     const [name, setName] = useState(prevName || '');
     const [url, setUrl] = useState(prevURL || '');
+    const [serviceTabs, setServiceTabs] = useState<boolean>(prevServiceTabs || true);
     const [nameError, setNameError] = useState('');
     const [urlError, setURLError] = useState<{type: STATUS; value: string}>();
     const [showContent, setShowContent] = useState(false);
@@ -197,6 +199,10 @@ function ConfigureServer({
         }
     };
 
+    const handleServiceTabsOnChange = () => {
+        setServiceTabs(!serviceTabs);
+    };
+
     // when focus on name, check if url is valid
     const handleNameOnFocus = () => {
         fetchValidationResult(url);
@@ -236,6 +242,7 @@ function ConfigureServer({
             onConnect({
                 url,
                 name,
+                serviceTabs,
                 id,
             });
         }, MODAL_TRANSITION_TIMEOUT);
@@ -351,6 +358,30 @@ function ConfigureServer({
                                         disabled={waiting}
                                         darkMode={darkMode}
                                     />
+                                    <label
+                                        style={{
+                                            color: 'rgba(var(--center-channel-text-rgb), 0.64)',
+                                            marginTop: 22,
+                                            fontFamily: 'Metropolis',
+                                            fontSize: '14px',
+                                            fontStyle: 'normal',
+                                            lineHeight: '20px',
+                                        }}
+                                    >
+                                        <input
+                                            type='checkbox'
+                                            style={{
+                                                marginRight: 10,
+                                                marginTop: 1,
+                                            }}
+                                            checked={serviceTabs}
+                                            onChange={handleServiceTabsOnChange}
+                                        />
+                                        <FormattedMessage
+                                            id='renderer.components.configureServer.serviceTabs.info'
+                                            defaultMessage='Show other service tabs'
+                                        />
+                                    </label>
                                     <SaveButton
                                         id='connectConfigureServer'
                                         extraClasses='ConfigureServer__card-form-button'

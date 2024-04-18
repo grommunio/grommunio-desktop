@@ -34,6 +34,7 @@ export class MattermostServer {
         return {
             name: this.name,
             url: this.url.toString(),
+            serviceTabs: false,
             id: this.id,
             isPredefined: this.isPredefined,
         };

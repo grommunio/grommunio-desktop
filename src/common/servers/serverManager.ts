@@ -20,7 +20,7 @@ import MessagingView from 'common/views/MessagingView';
 import type {MattermostView} from 'common/views/View';
 import {TAB_MESSAGING, TAB_DESKTOP, TAB_MEET, TAB_FILES, getDefaultViews} from 'common/views/View';
 
-import type {Server, ConfigServer, ConfigView} from 'types/config';
+import type {Server, ConfigServer, ConfigView, UniqueServer} from 'types/config';
 import type {RemoteInfo} from 'types/server';
 
 const log = new Logger('ServerManager');
@@ -159,7 +159,7 @@ export class ServerManager extends EventEmitter {
         this.persistServers();
     };
 
-    addServer = (server: Server) => {
+    addServer = (server: UniqueServer) => {
         const newServer = new MattermostServer(server, false);
 
         if (this.servers.has(newServer.id)) {
@@ -173,24 +173,43 @@ export class ServerManager extends EventEmitter {
 
         // first add desktop view
         const newView = this.getNewView(newServer, TAB_DESKTOP, true);
-        this.views.set(newView.id, newView);
-        viewOrder.push(newView.id);
 
-        // add other views (check if server has views with remoteConfig)
-        newServer.getRemoteInfo().then((remoteConfig) => {
+        // unnecessary if-clause cause TAB_DESKTOP will always return a view but wanted to make the vscode error highlighting disappear
+        if (newView) {
+            this.views.set(newView.id as string, newView);
+            viewOrder.push(newView.id);
+        }
+        if (server.serviceTabs) {
+            // add other views (check if server has views with remoteConfig)
+            newServer.getRemoteInfo().then((remoteConfig) => {
+                getDefaultViews().slice(1).forEach((view) => {
+                    let isOpen = view.isOpen || false;
+                    switch (view.name) {
+                    case TAB_MESSAGING:
+                        isOpen = view.isOpen || (remoteConfig?.hasChat || false);
+                        break;
+                    case TAB_FILES:
+                        isOpen = view.isOpen || (remoteConfig?.hasFiles || false);
+                        break;
+                    case TAB_MEET:
+                        isOpen = view.isOpen || (remoteConfig?.hasMeet || false);
+                        break;
+                    }
+                    log.warn(`view ${view.name} ${view.isOpen} ${isOpen}`);
+                    const newView = this.getNewView(newServer, view.name, isOpen);
+                    if (!newView) {
+                        return;
+                    }
+                    this.views.set(newView.id, newView);
+                    viewOrder.push(newView.id);
+                });
+            });
+        } else {
             getDefaultViews().slice(1).forEach((view) => {
-                let isOpen = view.isOpen || false;
-                switch (view.name) {
-                case TAB_MESSAGING:
-                    isOpen = view.isOpen || (remoteConfig?.hasChat || false);
-                    break;
-                case TAB_FILES:
-                    isOpen = view.isOpen || (remoteConfig?.hasFiles || false);
-                    break;
-                case TAB_MEET:
-                    isOpen = view.isOpen || (remoteConfig?.hasMeet || false);
-                    break;
+                if (view.name === TAB_MESSAGING || view.name === TAB_FILES || view.name === TAB_MEET) {
+                    return;
                 }
+                const isOpen = view.isOpen || false;
                 log.warn(`view ${view.name} ${view.isOpen} ${isOpen}`);
                 const newView = this.getNewView(newServer, view.name, isOpen);
                 if (!newView) {
@@ -199,7 +218,7 @@ export class ServerManager extends EventEmitter {
                 this.views.set(newView.id, newView);
                 viewOrder.push(newView.id);
             });
-        });
+        }
         this.viewOrder.set(newServer.id, viewOrder);
 
         // Emit this event whenever we update a server URL to ensure remote info is fetched
