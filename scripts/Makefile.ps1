@@ -408,7 +408,7 @@ function Restore-ComputerState {
     # Remove all COM_MATTERMOST_MAKEFILE_ prefixed env variable
     foreach ($item in (Get-Item -Path Env:*)) {
         if ($item.Name -imatch 'COM_MATTERMOST_MAKEFILE_') {
-            Print-Info "Removing Mattermost env variable: $($item.Name)..."
+            Print-Info "Removing grommunio env variable: $($item.Name)..."
             Remove-Item env:\$($item.Name)
         }
     }
@@ -557,11 +557,11 @@ function Run-BuildForceSignature {
                 signtool.exe sign /f "./mattermost-desktop-windows.pfx" /p "$env:PFX_KEY" /tr "http://timestamp.digicert.com" /fd sha256 /td sha256 /as "$($_.FullName)"
             }
 
-            Print-Info "Signing Mattermost.exe (waiting for 2 * 15 seconds)..."
+            Print-Info "Signing grommunio.exe (waiting for 2 * 15 seconds)..."
             Start-Sleep -s 15
-            signtool.exe sign /f "./mattermost-desktop-windows.pfx" /p "$env:PFX_KEY" /tr "http://timestamp.digicert.com" /fd sha1 /td sha1 "$archPath\Mattermost.exe"
+            signtool.exe sign /f "./mattermost-desktop-windows.pfx" /p "$env:PFX_KEY" /tr "http://timestamp.digicert.com" /fd sha1 /td sha1 "$archPath\grommunio.exe"
             Start-Sleep -s 15
-            signtool.exe sign /f "./mattermost-desktop-windows.pfx" /p "$env:PFX_KEY" /tr "http://timestamp.digicert.com" /fd sha256 /td sha256 /as "$archPath\Mattermost.exe"
+            signtool.exe sign /f "./mattermost-desktop-windows.pfx" /p "$env:PFX_KEY" /tr "http://timestamp.digicert.com" /fd sha256 /td sha256 /as "$archPath\grommunio.exe"
         }
     } else {
         Print-Info "Certificate file not found, DLLs and executable won't be signed."

@@ -103,9 +103,9 @@ export function composeUserAgent() {
     const baseUserAgent = app.userAgentFallback.split(' ');
 
     // filter out the Mattermost tag that gets added earlier on
-    const filteredUserAgent = baseUserAgent.filter((ua) => !ua.startsWith('Mattermost'));
+    const filteredUserAgent = baseUserAgent.filter((ua) => !ua.startsWith('grommunio'));
 
-    return `${filteredUserAgent.join(' ')} Mattermost/${app.getVersion()}`;
+    return `${filteredUserAgent.join(' ')} grommunio/${app.getVersion()}`;
 }
 
 export function isStringWithLength(string: unknown): boolean {
@@ -149,7 +149,7 @@ export function resetScreensharePermissionsMacOS() {
     if (process.platform !== 'darwin') {
         return Promise.resolve();
     }
-    return exec('tccutil reset ScreenCapture Mattermost.Desktop',
+    return exec('tccutil reset ScreenCapture grommunio.Desktop',
         {timeout: 1000});
 }
 

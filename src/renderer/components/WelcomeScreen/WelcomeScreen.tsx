@@ -44,7 +44,7 @@ function WelcomeScreen({
             title: formatMessage({id: 'renderer.components.welcomeScreen.slides.welcome.title', defaultMessage: 'Welcome'}),
             subtitle: formatMessage({
                 id: 'renderer.components.welcomeScreen.slides.welcome.subtitle',
-                defaultMessage: 'Mattermost is an open source platform for developer collaboration. Secure, flexible, and integrated with the tools you love.',
+                defaultMessage: 'grommunio is an open source platform for developer collaboration. Secure, flexible, and integrated with the tools you love.',
             }),
             image: (
                 <img

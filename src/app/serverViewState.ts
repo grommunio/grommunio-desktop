@@ -276,7 +276,7 @@ export class ServerViewState {
             return {status: URLValidationStatus.NotMattermost, validatedURL: parsedURL.toString()};
         }
 
-        const remoteServerName = remoteInfo.siteName === 'Mattermost' ? remoteURL.host.split('.')[0] : remoteInfo.siteName;
+        const remoteServerName = remoteInfo.siteName === 'grommunio' ? remoteURL.host.split('.')[0] : remoteInfo.siteName;
 
         // If we were only able to connect via HTTP, warn the user that the connection is not secure
         if (remoteURL.protocol === 'http:') {
