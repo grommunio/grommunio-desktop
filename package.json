@@ -1,19 +1,19 @@
 {
-  "name": "mattermost-desktop",
-  "productName": "Mattermost",
+  "name": "grommunio-desktop",
+  "productName": "grommunio",
   "version": "5.8.0",
-  "description": "Mattermost",
+  "description": "grommunio",
   "main": "dist/index.js",
-  "author": "Mattermost, Inc. <feedback@mattermost.com>",
+  "author": "grommunio GmbH <dev@grommunio.com>",
   "license": "Apache-2.0",
-  "desktopName": "Mattermost.Desktop",
-  "homepage": "https://mattermost.com",
+  "desktopName": "grommunio.Desktop",
+  "homepage": "https://grommunio.com",
   "engines": {
     "node": ">=18.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mattermost/desktop.git"
+    "url": "https://github.com/grommunio/grommunio-desktop"
   },
   "config": {
     "target": "29.3.0",
