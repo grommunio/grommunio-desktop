@@ -27,3 +27,5 @@ fastlane/report.xml
 *.tsbuildinfo
 
 .eslintcache
+
+package-lock.json
