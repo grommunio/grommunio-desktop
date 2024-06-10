@@ -35,7 +35,7 @@
   "renderer.components.configureServer.url.placeholder": "URL del server",
   "renderer.components.extraBar.back": "Indietro",
   "renderer.components.input.required": "Questo campo è richiesto",
-  "renderer.components.mainPage.titleBar": "Mattermost",
+  "renderer.components.mainPage.titleBar": "grommunio",
   "renderer.components.newServerModal.error.urlNeedsHttp": "URL deve iniziare con http:// o https://.",
   "renderer.components.newServerModal.serverURL": "URL del server",
   "renderer.components.newServerModal.title.add": "Aggiungi server",
