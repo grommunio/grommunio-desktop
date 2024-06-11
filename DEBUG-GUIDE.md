@@ -24,7 +24,7 @@ Based on Mattermost Desktop 5.6.0
  - Windows:
    - zip-file: `npm run package:windows` \
         or
-   - msi-installer: `./scripts/Makefile.ps1 build` & `git add -A; git reset --hard HEAD`
+   - msi-installer: `./scripts/Makefile.ps1 build` & `git add -A; git reset --hard HEAD` (for faster packing comment `npm run ...` lines in `Makefile.ps1` out)
 
 ## Signing
 
