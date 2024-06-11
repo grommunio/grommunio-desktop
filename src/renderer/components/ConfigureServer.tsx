@@ -358,9 +358,9 @@ function ConfigureServer({
                                         disabled={waiting}
                                         darkMode={darkMode}
                                     />
-                                    <label
+                                    <p
                                         style={{
-                                            color: 'rgba(var(--center-channel-text-rgb), 0.64)',
+                                            color: darkMode ? 'rgba(var(--button-color-rgb), 0.56)' : 'rgba(var(--center-channel-color-rgb), 0.56)',
                                             marginTop: 22,
                                             fontFamily: 'Metropolis',
                                             fontSize: '14px',
@@ -381,15 +381,13 @@ function ConfigureServer({
                                             id='renderer.components.configureServer.serviceTabs.info'
                                             defaultMessage='Show other service tabs'
                                         />
-                                    </label>
+                                    </p>
                                     <SaveButton
                                         id='connectConfigureServer'
                                         extraClasses='ConfigureServer__card-form-button'
                                         saving={waiting}
                                         onClick={handleOnSaveButtonClick}
-                                        defaultMessage={urlError?.type === STATUS.WARNING ?
-                                            formatMessage({id: 'renderer.components.configureServer.connect.override', defaultMessage: 'Connect anyway'}) :
-                                            formatMessage({id: 'renderer.components.configureServer.connect.default', defaultMessage: 'Connect'})
+                                        defaultMessage={urlError?.type === STATUS.WARNING ? formatMessage({id: 'renderer.components.configureServer.connect.override', defaultMessage: 'Connect anyway'}) : formatMessage({id: 'renderer.components.configureServer.connect.default', defaultMessage: 'Connect'})
                                         }
                                         savingMessage={formatMessage({id: 'renderer.components.configureServer.connect.saving', defaultMessage: 'Connecting…'})}
                                         disabled={!canSave}

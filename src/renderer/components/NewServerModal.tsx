@@ -96,7 +96,7 @@ class NewServerModal extends React.PureComponent<Props, State> {
         this.setState({
             serverServiceTabs: !this.state.serverServiceTabs,
         });
-    }
+    };
 
     // when focus on name, check if url is valid
     handleServerNameFocus = () => {
@@ -435,31 +435,31 @@ class NewServerModal extends React.PureComponent<Props, State> {
                                     defaultMessage='The name of the server displayed on your desktop app tab bar.'
                                 />
                             </FormText>
-                        </FormGroup>
-                        <label
-                            style={{
-                                color: 'rgba(var(--center-channel-text-rgb), 0.64)',
-                                marginTop: 22,
-                                fontFamily: 'Metropolis',
-                                fontSize: '14px',
-                                fontStyle: 'normal',
-                                lineHeight: '20px',
-                            }}
-                        >
-                            <input
-                                type='checkbox'
+                            <p
                                 style={{
-                                    marginRight: 10,
-                                    marginTop: 1,
+                                    color: 'rgba(var(--center-channel-color-rgb), 0.56)',
+                                    marginTop: 22,
+                                    fontFamily: 'Metropolis',
+                                    fontSize: '14px',
+                                    fontStyle: 'normal',
+                                    lineHeight: '20px',
                                 }}
-                                checked={this.state.serverServiceTabs}
-                                onChange={this.handleServerServiceTabsChange}
-                            />
-                            <FormattedMessage
-                                id='renderer.components.configureServer.serviceTabs.info'
-                                defaultMessage='Show other service tabs'
-                            />
-                        </label>
+                            >
+                                <input
+                                    type='checkbox'
+                                    style={{
+                                        marginRight: 10,
+                                        marginTop: 1,
+                                    }}
+                                    checked={this.state.serverServiceTabs}
+                                    onChange={this.handleServerServiceTabsChange}
+                                />
+                                <FormattedMessage
+                                    id='renderer.components.configureServer.serviceTabs.info'
+                                    defaultMessage='Show other service tabs'
+                                />
+                            </p>
+                        </FormGroup>
                     </form>
                     <div
                         className='NewServerModal-validation'
