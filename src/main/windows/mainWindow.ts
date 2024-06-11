@@ -91,7 +91,7 @@ export class MainWindow extends EventEmitter {
         });
 
         if (process.platform === 'linux') {
-            windowOptions.icon = path.join(path.resolve(app.getAppPath(), 'assets'), 'linux', 'app_icon.png');
+            windowOptions.icon = path.join(path.resolve(app.getAppPath(), 'assets'), 'icons', '1024x1024.png');
         }
 
         this.win = new BrowserWindow(windowOptions);

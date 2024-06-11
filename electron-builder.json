@@ -71,14 +71,6 @@
           "LICENSE.txt",
           "NOTICE.txt"
         ]
-      },
-      {
-        "from": "src/assets/linux",
-        "filter": [
-          "create_desktop_file.sh",
-          "app_icon.png",
-          "README.md"
-        ]
       }
     ]
   },
