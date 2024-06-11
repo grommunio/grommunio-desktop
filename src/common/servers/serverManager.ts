@@ -126,19 +126,23 @@ export class ServerManager extends EventEmitter {
             return undefined;
         }
         const server = this.getAllServers().find((server) => {
+            //log.warn('check server', parsedURL.toString(), server.url.toString(), isInternalURL(parsedURL, server.url, ignoreScheme), getFormattedPathName(parsedURL.pathname).startsWith(getFormattedPathName(server.url.pathname)));
             return isInternalURL(parsedURL, server.url, ignoreScheme) &&
                 getFormattedPathName(parsedURL.pathname).startsWith(getFormattedPathName(server.url.pathname));
         });
         if (!server) {
             return undefined;
         }
+
+        //log.warn('get tabs for server', server.name);
         const views = this.getOrderedTabsForServer(server.id);
 
         let selectedView = views.find((view) => view && view.type === TAB_MESSAGING);
         views.
             filter((view) => view && view.type !== TAB_MESSAGING).
             forEach((view) => {
-                if (getFormattedPathName(parsedURL.pathname).startsWith(getFormattedPathName(view.url.pathname))) {
+                //log.warn('check pathname', parsedURL.toString(), view.url.toString());
+                if (getFormattedPathName(parsedURL.host).startsWith(getFormattedPathName(view.url.host))) {
                     selectedView = view;
                 }
             });

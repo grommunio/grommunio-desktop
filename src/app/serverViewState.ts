@@ -253,6 +253,7 @@ export class ServerViewState {
         }
 
         // Tell the user if they already have a server for this URL
+        //log.warn('Server already', url, httpUrl, parsedURL.toString(), secureURL);
         const existingServer = ServerManager.lookupViewByURL(secureURL, true);
         if (existingServer && existingServer.server.id !== currentId) {
             return {status: URLValidationStatus.URLExists, existingServerName: existingServer.server.name, validatedURL: existingServer.server.url.toString()};
