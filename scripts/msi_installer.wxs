@@ -35,7 +35,7 @@
   - there are any changes in the feature hierarchy (child
     feature moving out of a parent, or a parent feature getting a new child).
   -->
-  <Product Id="*" UpgradeCode="8523DAF0-699D-4CC7-9A65-C5E696A9DE6D" Name="grommunio Desktop" Manufacturer="grommunio GmbH." Language="1033" Codepage="1252" Version="0.0.0">
+  <Product Id="*" UpgradeCode="8523DAF0-699D-4CC7-9A65-C5E696A9DE6D" Name="grommunio Desktop" Manufacturer="grommunio GmbH." Language="1033" Codepage="1252" Version="5.8.0">
     <!--
     perMachine installs the app system wide (ALLUSERS is set to 1)
     src.: https://www.joyofsetup.com/2008/04/01/new-wix-feature-setting-package-installation-scope/
@@ -76,11 +76,11 @@
             </Component>
             <Directory Id="GPOFiles" Name="gpo">
               <Component Id="GPODefinitionFile" Guid="BE30D350-8727-41CB-9F8D-9E0B7B9572A9" Win64="$(var.Win64)">
-                <File Id="grommunioAdmxFile" Name="grommunio.admx" Source="../resources/windows/gpo/grommunio.admx" KeyPath="yes" />
+                <File Id="grommunioAdmxFile" Name="Mattermost.admx" Source="../resources/windows/gpo/Mattermost.admx" KeyPath="yes" />
               </Component>
               <Directory Id="GPOUSEnglishFiles" Name="en-US">
                 <Component Id="GPOUSEnglishFiles" Guid="1D49A24E-769C-4AF0-863E-0648628A4554" Win64="$(var.Win64)">
-                  <File Id="grommunioAdmlFile" Name="grommunio.adml" Source="../resources/windows/gpo/en-US/grommunio.adml" KeyPath="yes" />
+                  <File Id="grommunioAdmlFile" Name="Mattermost.adml" Source="../resources/windows/gpo/en-US/Mattermost.adml" KeyPath="yes" />
                 </Component>
               </Directory>
             </Directory>
@@ -114,7 +114,7 @@
       <!-- Using heat to generate file and directory hierarchy
            src.: https://stackoverflow.com/a/26558025/3514658
       -->
-      <ComponentGroupRef Id="grommunioDesktopFiles" />
+      <ComponentGroupRef Id="MattermostDesktopFiles" />
       <ComponentRef Id="MainExecutableShortcutDesktop" />
       <ComponentRef Id="MainExecutableShortcutStartMenu" />
       <ComponentRef Id="ProgramMenuDir" />
@@ -124,11 +124,10 @@
     </Feature>
     <InstallExecuteSequence>
       <RemoveShortcuts>Installed AND NOT UPGRADINGPRODUCTCODE</RemoveShortcuts>
-
       <Custom Action="KillApp" Before="InstallValidate" />
       <Custom Action="LaunchApp" After="InstallFinalize">Installed</Custom>
     </InstallExecuteSequence>
-    <CustomAction Id="LaunchApp" FileKey="grommunioDesktopEXE" ExeCommand="" Return="asyncNoWait" />
+    <CustomAction Id="LaunchApp" FileKey="MattermostDesktopEXE" ExeCommand="" Return="asyncNoWait" />
     <CustomAction Id="KillApp" Directory="INSTALLDIR" Return="ignore" ExeCommand="&quot;[SystemFolder]taskkill.exe&quot; /F /IM &quot;grommunio.exe&quot;" />
     <Icon Id="grommunio.ico" SourceFile="../src/assets/icon.ico" />
     <Property Id="ARPPRODUCTICON">grommunio.ico</Property>
